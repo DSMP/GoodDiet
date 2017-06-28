@@ -47,6 +47,7 @@ namespace DobraDietaApp
                                                                                                    select new { EmployeeId = employee.id_employee }).First().EmployeeId
                                                                  select new { IdRole = empl_role.id_role }).First().IdRole
                                           select role).First().name;
+                        MainWindow.LoginForm = this;
                         MainWindow.Show();
                         MainWindow.initFields();
                         this.Hide();

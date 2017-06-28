@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace DobraDietaApp
         List<int> productsRowsRemoved;
         private int idOfProduct = 0;
         List<Panel> panels;
+        byte[] bimage = null;
 
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
@@ -204,7 +206,54 @@ namespace DobraDietaApp
 
         private void SaveEmployeeButton_Click(object sender, EventArgs e)
         {
+            Employee newEmployee = new Employee();
+            newEmployee.login = LoginTextBox.Text;
+            newEmployee.name = NameTextBox.Text;
+            newEmployee.surname = SurnameTextBox.Text;
+            var nothing = (bimage == null ? newEmployee.photo = null : newEmployee.photo = bimage);
+            if (!LoginTextBox.Text.Equals("") && !NameTextBox.Text.Equals("") && !SurnameTextBox.Text.Equals(""))
+            {
+                db.Employees.InsertOnSubmit(newEmployee);
+                db.SubmitChanges();
+            }
+            else
+            {
+                MessageBox.Show("Fill all Fields");
+            }
+            employeesDataGridView.DataSource = db.Employees;
+            try
+            {
+                string insertStatement = "insert into pracownik_rola values (" + db.Employees.ToList().Last().id_employee + "," + (AdminCheckBox.Checked? 1 : 2) + ")";
+                db.ExecuteQuery<Posilek_produkty>(insertStatement);
+                SelectChanged(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Role " + ex.Message);
+            }
+        }
 
+        private void OpenPhotoButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    FileDirectoryLabel.Text = open.FileName;
+                }
+                string image = FileDirectoryLabel.Text;
+                Bitmap bmp = new Bitmap(image);
+                FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read);
+                bimage = new byte[fs.Length];
+                fs.Read(bimage, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+            }
+            catch (Exception)
+            {
+            }
+            
         }
     }
 }

@@ -39,7 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ProductsButton = new System.Windows.Forms.Button();
             this.CustomersButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.PeaopleButton = new System.Windows.Forms.Button();
             this.CustomerPanel = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -226,21 +226,21 @@
             // 
             this.CustomersButton.Location = new System.Drawing.Point(283, 28);
             this.CustomersButton.Name = "CustomersButton";
-            this.CustomersButton.Size = new System.Drawing.Size(90, 35);
+            this.CustomersButton.Size = new System.Drawing.Size(99, 35);
             this.CustomersButton.TabIndex = 2;
-            this.CustomersButton.Text = "Customers";
+            this.CustomersButton.Text = "Customers Meals";
             this.CustomersButton.UseVisualStyleBackColor = true;
             this.CustomersButton.Click += new System.EventHandler(this.CustomersButton_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(422, 28);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Users";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.UsersButton_Click);
+            this.PeaopleButton.Location = new System.Drawing.Point(422, 28);
+            this.PeaopleButton.Name = "button4";
+            this.PeaopleButton.Size = new System.Drawing.Size(86, 35);
+            this.PeaopleButton.TabIndex = 3;
+            this.PeaopleButton.Text = "People";
+            this.PeaopleButton.UseVisualStyleBackColor = true;
+            this.PeaopleButton.Click += new System.EventHandler(this.UsersButton_Click);
             // 
             // CustomerPanel
             // 
@@ -963,7 +963,7 @@
             this.Controls.Add(this.klienciBindingNavigator);
             this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.CustomerPanel);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.PeaopleButton);
             this.Controls.Add(this.CustomersButton);
             this.Controls.Add(this.ProductsButton);
             this.Controls.Add(this.button1);
@@ -1000,7 +1000,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ProductsButton;
         private System.Windows.Forms.Button CustomersButton;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button PeaopleButton;
         private System.Windows.Forms.Panel CustomerPanel;
         private System.Windows.Forms.Button LogoutButton;
         private DataSet1 dataSet1;

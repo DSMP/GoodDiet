@@ -85,6 +85,24 @@
             this.fKidproduktuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.LoginLabel = new System.Windows.Forms.Label();
             this.PermissionLabel = new System.Windows.Forms.Label();
+            this.UsersPanel = new System.Windows.Forms.Panel();
+            this.klienciDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesTableAdapter = new DobraDietaApp.DataSet1TableAdapters.EmployeesTableAdapter();
+            this.button7 = new System.Windows.Forms.Button();
             id_klientLabel = new System.Windows.Forms.Label();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
@@ -102,6 +120,10 @@
             this.klienciBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posilek_produktyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidproduktuBindingSource)).BeginInit();
+            this.UsersPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // id_klientLabel
@@ -194,6 +216,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Users";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.UsersButton_Click);
             // 
             // CustomerPanel
             // 
@@ -447,7 +470,7 @@
             this.klienciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.klienciBindingNavigator.Name = "klienciBindingNavigator";
             this.klienciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.klienciBindingNavigator.Size = new System.Drawing.Size(917, 25);
+            this.klienciBindingNavigator.Size = new System.Drawing.Size(922, 25);
             this.klienciBindingNavigator.TabIndex = 7;
             this.klienciBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -576,11 +599,151 @@
             this.PermissionLabel.TabIndex = 9;
             this.PermissionLabel.Text = "Permission";
             // 
+            // UsersPanel
+            // 
+            this.UsersPanel.Controls.Add(this.button7);
+            this.UsersPanel.Controls.Add(this.klienciDataGridView);
+            this.UsersPanel.Controls.Add(this.employeesDataGridView);
+            this.UsersPanel.Location = new System.Drawing.Point(12, 69);
+            this.UsersPanel.Name = "UsersPanel";
+            this.UsersPanel.Size = new System.Drawing.Size(910, 489);
+            this.UsersPanel.TabIndex = 10;
+            this.UsersPanel.Visible = false;
+            // 
+            // klienciDataGridView
+            // 
+            this.klienciDataGridView.AutoGenerateColumns = false;
+            this.klienciDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.klienciDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.klienciDataGridView.DataSource = this.klienciBindingSource;
+            this.klienciDataGridView.Location = new System.Drawing.Point(274, 7);
+            this.klienciDataGridView.Name = "klienciDataGridView";
+            this.klienciDataGridView.Size = new System.Drawing.Size(619, 230);
+            this.klienciDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "id_klient";
+            this.dataGridViewTextBoxColumn12.HeaderText = "id_klient";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "imie";
+            this.dataGridViewTextBoxColumn13.HeaderText = "imie";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "nazwisko";
+            this.dataGridViewTextBoxColumn14.HeaderText = "nazwisko";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "wiek";
+            this.dataGridViewTextBoxColumn15.HeaderText = "wiek";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "waga";
+            this.dataGridViewTextBoxColumn16.HeaderText = "waga";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "wzrost";
+            this.dataGridViewTextBoxColumn17.HeaderText = "wzrost";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // employeesDataGridView
+            // 
+            this.employeesDataGridView.AutoGenerateColumns = false;
+            this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewImageColumn1});
+            this.employeesDataGridView.DataSource = this.employeesBindingSource;
+            this.employeesDataGridView.Location = new System.Drawing.Point(274, 253);
+            this.employeesDataGridView.Name = "employeesDataGridView";
+            this.employeesDataGridView.Size = new System.Drawing.Size(619, 224);
+            this.employeesDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "id_employee";
+            this.dataGridViewTextBoxColumn7.HeaderText = "id_employee";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "login";
+            this.dataGridViewTextBoxColumn8.HeaderText = "login";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn9.HeaderText = "name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "surname";
+            this.dataGridViewTextBoxColumn10.HeaderText = "surname";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "password";
+            this.dataGridViewTextBoxColumn11.HeaderText = "password";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "photo";
+            this.dataGridViewImageColumn1.HeaderText = "photo";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            this.employeesBindingSource.DataSource = this.dataSet1;
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Location = new System.Drawing.Point(174, 253);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(94, 23);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Save Employee";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.SaveEmployeeButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 558);
+            this.ClientSize = new System.Drawing.Size(922, 558);
+            this.Controls.Add(this.UsersPanel);
             this.Controls.Add(this.PermissionLabel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
@@ -606,6 +769,10 @@
             this.klienciBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posilek_produktyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidproduktuBindingSource)).EndInit();
+            this.UsersPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -662,6 +829,24 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.Label PermissionLabel;
+        private System.Windows.Forms.Panel UsersPanel;
+        private System.Windows.Forms.BindingSource employeesBindingSource;
+        private DataSet1TableAdapters.EmployeesTableAdapter employeesTableAdapter;
+        private System.Windows.Forms.DataGridView klienciDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridView employeesDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Button button7;
     }
 }
 

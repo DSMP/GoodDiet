@@ -17,6 +17,7 @@ namespace DobraDietaApp
         int idOfMeal = 0;
         List<int> productsRowsRemoved;
         private int idOfProduct = 0;
+        List<Panel> panels;
 
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
@@ -27,7 +28,17 @@ namespace DobraDietaApp
             db = new DataClasses1DataContext();
             dt = new DataSet1();
             productsRowsRemoved = new List<int>();
+            panels = new List<Panel>();
+            panels.Add(CustomerPanel);
+            panels.Add(UsersPanel);
         }        
+        private void visibleOffPannels()
+        {
+            foreach (var item in panels)
+            {
+                item.Visible = false;
+            }
+        }
 
         public void initFields()
         {
@@ -40,10 +51,14 @@ namespace DobraDietaApp
             var query = from product in db.Produkties
             select product;
             MealsProductsDataGridView.DataSource = query;
+            visibleOffPannels();
+            CustomerPanel.Visible = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
+            this.employeesTableAdapter.Fill(this.dataSet1.Employees);
             // TODO: This line of code loads data into the 'dataSet1.Posilek_produkty' table. You can move, or remove it, as needed.
             this.posilek_produktyTableAdapter.Fill(this.dataSet1.Posilek_produkty);
             // TODO: This line of code loads data into the 'dataSet1.Produkty' table. You can move, or remove it, as needed.
@@ -65,6 +80,7 @@ namespace DobraDietaApp
             {
                 this.Validate();
                 this.klienciBindingSource.EndEdit();
+                this.employeesBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
 
             }
@@ -178,6 +194,17 @@ namespace DobraDietaApp
             {
                 MessageBox.Show("First choose Product of Meal Then press to Removed");
             }
+        }
+
+        private void UsersButton_Click(object sender, EventArgs e)
+        {
+            visibleOffPannels();
+            UsersPanel.Visible = true;
+        }
+
+        private void SaveEmployeeButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

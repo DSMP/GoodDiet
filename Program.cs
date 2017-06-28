@@ -16,7 +16,14 @@ namespace DobraDietaApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            try
+            {
+                Application.Run(new LoginForm());
+            }
+            catch (System.Data.NoNullAllowedException e)
+            {
+                MessageBox.Show("Fill all required fields like: " + e.Message);
+            }
         }
     }
 }

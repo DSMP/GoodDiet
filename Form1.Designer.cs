@@ -41,6 +41,7 @@
             this.CustomersButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.CustomerPanel = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ProductsList = new System.Windows.Forms.ComboBox();
             this.produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -70,7 +71,6 @@
             this.klienciBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -79,6 +79,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.klienciBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.posilek_produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fKidproduktuBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -194,6 +195,7 @@
             // 
             // CustomerPanel
             // 
+            this.CustomerPanel.Controls.Add(this.button6);
             this.CustomerPanel.Controls.Add(this.button3);
             this.CustomerPanel.Controls.Add(this.ProductsList);
             this.CustomerPanel.Controls.Add(this.MealsProductsDataGridView);
@@ -214,6 +216,16 @@
             this.CustomerPanel.Name = "CustomerPanel";
             this.CustomerPanel.Size = new System.Drawing.Size(893, 485);
             this.CustomerPanel.TabIndex = 4;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(20, 261);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(185, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Remove Product From Meal";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.RemoveProductFromMeal_Click);
             // 
             // button3
             // 
@@ -254,6 +266,7 @@
             this.MealsProductsDataGridView.Name = "MealsProductsDataGridView";
             this.MealsProductsDataGridView.Size = new System.Drawing.Size(679, 179);
             this.MealsProductsDataGridView.TabIndex = 13;
+            this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
             // 
             // posilekDataGridView
             // 
@@ -271,7 +284,6 @@
             this.posilekDataGridView.Name = "posilekDataGridView";
             this.posilekDataGridView.Size = new System.Drawing.Size(679, 166);
             this.posilekDataGridView.TabIndex = 12;
-            this.posilekDataGridView.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.RowSelected);
             this.posilekDataGridView.SelectionChanged += new System.EventHandler(this.SelectChanged);
             // 
             // dataGridViewTextBoxColumn1
@@ -412,7 +424,7 @@
             this.klienciBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
             this.klienciBindingNavigator.BindingSource = this.klienciBindingSource;
             this.klienciBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.klienciBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.klienciBindingNavigator.DeleteItem = null;
             this.klienciBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -452,16 +464,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -524,6 +526,16 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // klienciBindingNavigatorSaveItem
             // 
@@ -625,6 +637,7 @@
         private System.Windows.Forms.ComboBox ProductsList;
         private System.Windows.Forms.BindingSource fKidproduktuBindingSource;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }
 

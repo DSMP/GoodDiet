@@ -14,13 +14,16 @@ namespace DobraDietaApp
     {
         DataClasses1DataContext db;
         DataSet1 dt;
-        int idOfMeal = 1;
+        int idOfMeal = 0;
+        List<int> productsRowsRemoved;
+        private int idOfProduct = 0;
 
         public Form1()
         {
             InitializeComponent();
             db = new DataClasses1DataContext();
             dt = new DataSet1();
+            productsRowsRemoved = new List<int>();
         }        
 
         private void CustomersButton_Click(object sender, EventArgs e)
@@ -54,17 +57,13 @@ namespace DobraDietaApp
                 this.Validate();
                 this.klienciBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
+
             }
             catch (Exception)
             {
                 MessageBox.Show("Error with saving");
                 this.klienciTableAdapter.Fill(this.dataSet1.Klienci);
             }
-
-        }
-
-        private void RowSelected(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 
@@ -112,6 +111,7 @@ namespace DobraDietaApp
                 string insertStatement = "Insert into Posilek_produkty values(" + mealRow.FirstOrDefault().IdMeal + ", " +
                         productRow.FirstOrDefault().IdProduct + ")";
                 db.ExecuteQuery<Posilek_produkty>(insertStatement);
+                SelectChanged(sender,e);
             }
             catch (Exception)
             {
@@ -124,16 +124,51 @@ namespace DobraDietaApp
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             int ClientID = Convert.ToInt32(id_klientTextBox.Text);
+            //int ClientID = bindingNavigatorDeleteItem.;
             var queryMeal = from Meal in db.Posileks
                             where Meal.id_klient == ClientID
                             select Meal;
+            foreach (var item in queryMeal.ToList())
+            {
+                var queryProd_Meals = from prod_Meal in db.Posilek_produkties
+                                      where prod_Meal.id_posilku == item.id_posilku
+                                      select prod_Meal;
+                foreach (var item2 in queryProd_Meals.ToList())
+                {
+                    string insertStatement = "Delete From Posilek_produkty where id_posilku = " + item2.id_posilku;
+                    db.ExecuteQuery<Posilek_produkty>(insertStatement);
+                }
+                db.Posileks.DeleteOnSubmit(item);
+            }
 
 
             var queryClient = from Client in db.Kliencis
-                        where Client.id_klient == ClientID
-                        select Client;
+                              where Client.id_klient == ClientID
+                              select Client;
             db.Kliencis.DeleteOnSubmit(queryClient.First());
+            db.SubmitChanges();
+            klienciTableAdapter.Fill(this.dataSet1.Klienci);
 
+        }
+
+        private void productSelectionChanged(object sender, EventArgs e)
+        {
+            int Selectedproduct = MealsProductsDataGridView.CurrentCell.RowIndex;
+            idOfProduct = (int)MealsProductsDataGridView.Rows[Selectedproduct].Cells[0].Value;
+        }
+
+        private void RemoveProductFromMeal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string insertStatement = "Delete From Posilek_produkty where id_posilku = " + idOfMeal + " AND id_produktu = " + idOfProduct;
+                db.ExecuteQuery<Posilek_produkty>(insertStatement);
+                SelectChanged(sender, e);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("First choose Product of Meal Then press to Removed");
+            }
         }
     }
 }

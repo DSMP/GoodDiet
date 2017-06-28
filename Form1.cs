@@ -23,9 +23,11 @@ namespace DobraDietaApp
 
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
+        public LoginForm LoginForm { get; internal set; }
 
         public Form1()
         {
+            this.FormClosing += Application_ApplicationExit;
             InitializeComponent();
             db = new DataClasses1DataContext();
             dt = new DataSet1();
@@ -33,7 +35,13 @@ namespace DobraDietaApp
             panels = new List<Panel>();
             panels.Add(CustomerPanel);
             panels.Add(UsersPanel);
-        }        
+        }
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            this.LoginForm.Close();
+        }
+
         private void visibleOffPannels()
         {
             foreach (var item in panels)

@@ -29,6 +29,12 @@ namespace DobraDietaApp
             productsRowsRemoved = new List<int>();
         }        
 
+        public void initFields()
+        {
+            LoginLabel.Text = UserLogin;
+            PermissionLabel.Text = Role;
+        }
+
         private void CustomersButton_Click(object sender, EventArgs e)
         {
             var query = from product in db.Produkties

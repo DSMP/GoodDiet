@@ -38,9 +38,7 @@ namespace DobraDietaApp
                     select new { Login = employee.login };
                     if (userLogged.FirstOrDefault() != null)
                     {
-                        this.Hide();
                         Form1 MainWindow = new Form1();
-                        MainWindow.Show();
                         MainWindow.UserLogin = LoginText.Text;
                         MainWindow.Role = (from role in db.Roles
                                           where role.id_role == (from empl_role in db.pracownik_rolas
@@ -49,6 +47,9 @@ namespace DobraDietaApp
                                                                                                    select new { EmployeeId = employee.id_employee }).First().EmployeeId
                                                                  select new { IdRole = empl_role.id_role }).First().IdRole
                                           select role).First().name;
+                        MainWindow.Show();
+                        MainWindow.initFields();
+                        this.Hide();
                     }
                     else
                     {

@@ -83,8 +83,8 @@
             this.klienciBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.posilek_produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fKidproduktuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.PermissionLabel = new System.Windows.Forms.Label();
             id_klientLabel = new System.Windows.Forms.Label();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
@@ -558,31 +558,31 @@
             this.fKidproduktuBindingSource.DataMember = "FK_id_produktu";
             this.fKidproduktuBindingSource.DataSource = this.produktyBindingSource;
             // 
-            // label1
+            // LoginLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(743, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Login";
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Location = new System.Drawing.Point(743, 28);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(33, 13);
+            this.LoginLabel.TabIndex = 8;
+            this.LoginLabel.Text = "Login";
             // 
-            // label2
+            // PermissionLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(823, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Permission";
+            this.PermissionLabel.AutoSize = true;
+            this.PermissionLabel.Location = new System.Drawing.Point(823, 28);
+            this.PermissionLabel.Name = "PermissionLabel";
+            this.PermissionLabel.Size = new System.Drawing.Size(57, 13);
+            this.PermissionLabel.TabIndex = 9;
+            this.PermissionLabel.Text = "Permission";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 558);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PermissionLabel);
+            this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.CustomerPanel);
@@ -660,8 +660,8 @@
         private System.Windows.Forms.BindingSource fKidproduktuBindingSource;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label PermissionLabel;
     }
 }
 

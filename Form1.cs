@@ -47,7 +47,7 @@ namespace DobraDietaApp
         {
             foreach (var item in panels)
             {
-                item.Hide();// = false;
+                item.Hide();
             }
         }
 
@@ -55,6 +55,7 @@ namespace DobraDietaApp
         {
             LoginLabel.Text = UserLogin;
             PermissionLabel.Text = Role;
+            button4.Visible = Role.Equals("ADMIN") ? true : false;
         }
 
         private void CustomersButton_Click(object sender, EventArgs e)
@@ -158,7 +159,6 @@ namespace DobraDietaApp
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             int ClientID = Convert.ToInt32(id_klientTextBox.Text);
-            //int ClientID = bindingNavigatorDeleteItem.;
             var queryMeal = from Meal in db.Posileks
                             where Meal.id_klient == ClientID
                             select Meal;

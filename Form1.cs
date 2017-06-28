@@ -18,6 +18,9 @@ namespace DobraDietaApp
         List<int> productsRowsRemoved;
         private int idOfProduct = 0;
 
+        public string UserLogin { get; internal set; }
+        public string Role { get; internal set; }
+
         public Form1()
         {
             InitializeComponent();

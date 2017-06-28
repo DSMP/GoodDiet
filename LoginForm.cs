@@ -41,6 +41,14 @@ namespace DobraDietaApp
                         this.Hide();
                         Form1 MainWindow = new Form1();
                         MainWindow.Show();
+                        MainWindow.UserLogin = LoginText.Text;
+                        MainWindow.Role = (from role in db.Roles
+                                          where role.id_role == (from empl_role in db.pracownik_rolas
+                                                                 where empl_role.id_pracownika == (from employee in db.Employees
+                                                                                                   where employee.login == LoginText.Text
+                                                                                                   select new { EmployeeId = employee.id_employee }).First().EmployeeId
+                                                                 select new { IdRole = empl_role.id_role }).First().IdRole
+                                          select role).First().name;
                     }
                     else
                     {

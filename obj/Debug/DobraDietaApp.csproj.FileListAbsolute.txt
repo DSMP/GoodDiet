@@ -1,0 +1,10 @@
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\bin\Debug\DobraDietaApp.exe.config
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\bin\Debug\DobraDietaApp.exe
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\bin\Debug\DobraDietaApp.pdb
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.Form1.resources
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.LoginForm.resources
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.Properties.Resources.resources
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.exe
+D:\Documents\Visual Studio 2015\Projects\DobraDietaApp\obj\Debug\DobraDietaApp.pdb

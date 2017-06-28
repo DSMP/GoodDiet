@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DobraDietaApp
+{
+    public partial class Form1 : Form
+    {
+        DataClasses1DataContext db;
+        DataSet1 dt;
+        int idOfMeal = 1;
+
+        public Form1()
+        {
+            InitializeComponent();
+            db = new DataClasses1DataContext();
+            dt = new DataSet1();
+        }        
+
+        private void CustomersButton_Click(object sender, EventArgs e)
+        {
+            var query = from product in db.Produkties
+            select product;
+            MealsProductsDataGridView.DataSource = query;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet1.Posilek_produkty' table. You can move, or remove it, as needed.
+            this.posilek_produktyTableAdapter.Fill(this.dataSet1.Posilek_produkty);
+            // TODO: This line of code loads data into the 'dataSet1.Produkty' table. You can move, or remove it, as needed.
+            this.produktyTableAdapter.Fill(this.dataSet1.Produkty);
+            // TODO: This line of code loads data into the 'dataSet1.Posilek' table. You can move, or remove it, as needed.
+            this.posilekTableAdapter.Fill(this.dataSet1.Posilek);
+            // TODO: This line of code loads data into the 'dataSet1.Klienci' table. You can move, or remove it, as needed.
+            this.klienciTableAdapter.Fill(this.dataSet1.Klienci);
+            // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
+            //this.employeesTableAdapter.Fill(this.dataSet1.Employees);
+            // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
+            //this.employeesTableAdapter.Fill(this.dataSet1.Employees);
+
+        }        
+
+        private void klienciBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Validate();
+                this.klienciBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.dataSet1);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error with saving");
+                this.klienciTableAdapter.Fill(this.dataSet1.Klienci);
+            }
+
+        }
+
+        private void RowSelected(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SelectChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                int SelectedMeal = posilekDataGridView.CurrentCell.RowIndex;
+                idOfMeal = (int)posilekDataGridView.Rows[SelectedMeal].Cells[0].Value;
+                var queryProductsID = from productsID in db.Posilek_produkties
+                                      where productsID.id_posilku == idOfMeal
+                                      select new { idOfProduct = productsID.id_produktu };
+                var queryproducts = from product in db.Produkties
+                                    join idProduct in queryProductsID on product.id_produkty equals idProduct.idOfProduct
+                                    select product;
+
+                MealsProductsDataGridView.DataSource = queryproducts;
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void ClearProductsOfMeals(object sender, EventArgs e)
+        {
+            MealsProductsDataGridView.DataSource = from produkt in db.Produkties
+                                                   where produkt.id_produkty < 1
+                                                   select produkt;
+        }
+
+        private void AddProductToMeal_Click(object sender, EventArgs e)
+        {
+            String productSelected = ProductsList.SelectedValue.ToString();
+            var productRow = from product in db.Produkties
+                        where product.nazwa == productSelected
+                        select new { IdProduct = product.id_produkty };
+            var mealRow = from meal in db.Posileks
+                          where meal.id_posilku == idOfMeal
+                          select new { IdMeal = meal.id_posilku };
+            Posilek_produkty newPosilek = new Posilek_produkty();
+            try
+            {
+                string insertStatement = "Insert into Posilek_produkty values(" + mealRow.FirstOrDefault().IdMeal + ", " +
+                        productRow.FirstOrDefault().IdProduct + ")";
+                db.ExecuteQuery<Posilek_produkty>(insertStatement);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("First save Then choose meal");
+            }
+            //db.Posilek_produkties.InsertOnSubmit(newPosilek);
+            //dt.Posilek_produkty.AddPosilek_produktyRow(mealRow.FirstOrDefault().IdMeal, productRow.FirstOrDefault().IdProduct);
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            int ClientID = Convert.ToInt32(id_klientTextBox.Text);
+            var queryMeal = from Meal in db.Posileks
+                            where Meal.id_klient == ClientID
+                            select Meal;
+
+
+            var queryClient = from Client in db.Kliencis
+                        where Client.id_klient == ClientID
+                        select Client;
+            db.Kliencis.DeleteOnSubmit(queryClient.First());
+
+        }
+    }
+}

@@ -60,11 +60,12 @@ namespace DobraDietaApp
 
         private void CustomersButton_Click(object sender, EventArgs e)
         {
-            var query = from product in db.Produkties
-            select product;
-            MealsProductsDataGridView.DataSource = query;
+            //var query = from product in db.Produkties
+            //select product;
+            //MealsProductsDataGridView.DataSource = query;
             visibleOffPannels();
             CustomerPanel.Visible = true;
+            ClearProductsOfMeals(sender, e);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace DobraDietaApp
             // TODO: This line of code loads data into the 'dataSet1.Produkty' table. You can move, or remove it, as needed.
             this.produktyTableAdapter.Fill(this.dataSet1.Produkty);
             // TODO: This line of code loads data into the 'dataSet1.Posilek' table. You can move, or remove it, as needed.
-            this.posilekTableAdapter.Fill(this.dataSet1.Posilek);
+           // this.posilekTableAdapter.Fill(this.dataSet1.Posilek);
             // TODO: This line of code loads data into the 'dataSet1.Klienci' table. You can move, or remove it, as needed.
             this.klienciTableAdapter.Fill(this.dataSet1.Klienci);
             // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
@@ -109,8 +110,8 @@ namespace DobraDietaApp
             try
             {
 
-                int SelectedMeal = posilekDataGridView.CurrentCell.RowIndex;
-                idOfMeal = (int)posilekDataGridView.Rows[SelectedMeal].Cells[0].Value;
+                int SelectedMeal = ClientMealsDataGrid.CurrentCell.RowIndex;
+                idOfMeal = (int)ClientMealsDataGrid.Rows[SelectedMeal].Cells[0].Value;
                 var queryProductsID = from productsID in db.Posilek_produkties
                                       where productsID.id_posilku == idOfMeal
                                       select new { idOfProduct = productsID.id_produktu };
@@ -131,6 +132,18 @@ namespace DobraDietaApp
             MealsProductsDataGridView.DataSource = from produkt in db.Produkties
                                                    where produkt.id_produkty < 1
                                                    select produkt;
+
+            var fillMealTable = from meal in db.Posileks
+                                where meal.id_klient == Convert.ToInt32(id_klientTextBox.Text)
+                                select new { meal.id_posilku, meal.data_posilku, TypeOfMeal = (from mealType in db.typ_posilkus
+                                                                                              where mealType.id_typ_posilku == meal.id_typ_posilku
+                                                                                              select new { mealType.name }).First().name, EmployeeName = (from employee in db.Employees
+                                                                                                                                      where employee.id_employee == meal.id_employee
+                                                                                                                                      select new { employee.name }).First().name,
+                                    meal.data_wprowadzenia };
+            //join employee in db.Employees on meal.id_employee equals employee.id_employee
+            //join typeMeal in db.typ_posilkus on meal.id_posilku equals typeMeal.id_typ_posilku
+            ClientMealsDataGrid.DataSource = fillMealTable;
         }
 
         private void AddProductToMeal_Click(object sender, EventArgs e)
@@ -231,7 +244,7 @@ namespace DobraDietaApp
             try
             {
                 string insertStatement = "insert into pracownik_rola values (" + db.Employees.ToList().Last().id_employee + "," + (AdminCheckBox.Checked? 1 : 2) + ")";
-                db.ExecuteQuery<Posilek_produkty>(insertStatement);
+                db.ExecuteQuery<pracownik_rola>(insertStatement);
             }
             catch (Exception ex)
             {
@@ -273,7 +286,7 @@ namespace DobraDietaApp
         private void ProductsButton_Click(object sender, EventArgs e)
         {
             visibleOffPannels();
-            ProductPanel.Show();// = true;
+            ProductPanel.Show();
         }
     }
 }

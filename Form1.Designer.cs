@@ -62,7 +62,7 @@
             this.wiekTextBox = new System.Windows.Forms.TextBox();
             this.wagaTextBox = new System.Windows.Forms.TextBox();
             this.wzrostTextBox = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.klienciTableAdapter = new DobraDietaApp.DataSet1TableAdapters.KlienciTableAdapter();
             this.tableAdapterManager = new DobraDietaApp.DataSet1TableAdapters.TableAdapterManager();
             this.posilek_produktyTableAdapter = new DobraDietaApp.DataSet1TableAdapters.Posilek_produktyTableAdapter();
@@ -417,14 +417,15 @@
             this.wzrostTextBox.Size = new System.Drawing.Size(100, 20);
             this.wzrostTextBox.TabIndex = 11;
             // 
-            // button5
+            // LogoutButton
             // 
-            this.button5.Location = new System.Drawing.Point(555, 28);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(87, 35);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Logout";
-            this.button5.UseVisualStyleBackColor = true;
+            this.LogoutButton.Location = new System.Drawing.Point(555, 28);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(87, 35);
+            this.LogoutButton.TabIndex = 6;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // klienciTableAdapter
             // 
@@ -869,7 +870,7 @@
             this.Controls.Add(this.PermissionLabel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.LogoutButton);
             this.Controls.Add(this.CustomerPanel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.CustomersButton);
@@ -908,7 +909,7 @@
         private System.Windows.Forms.Button CustomersButton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel CustomerPanel;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button LogoutButton;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource klienciBindingSource;
         private DataSet1TableAdapters.KlienciTableAdapter klienciTableAdapter;

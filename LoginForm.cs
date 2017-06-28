@@ -71,5 +71,10 @@ namespace DobraDietaApp
             byte[] hashedDataBytes = sha256hasher.ComputeHash(encoder.GetBytes(phrase));
             return Convert.ToBase64String(hashedDataBytes);
         }
+
+        internal void Logout()
+        {
+            PasswordText.Text = "";
+        }
     }
 }

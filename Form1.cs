@@ -35,6 +35,7 @@ namespace DobraDietaApp
             panels = new List<Panel>();
             panels.Add(CustomerPanel);
             panels.Add(UsersPanel);
+            panels.Add(ProductPanel);
         }
 
         private void Application_ApplicationExit(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace DobraDietaApp
         {
             foreach (var item in panels)
             {
-                item.Visible = false;
+                item.Hide();// = false;
             }
         }
 
@@ -267,6 +268,12 @@ namespace DobraDietaApp
             this.FormClosing -= Application_ApplicationExit;
             LoginForm.Logout();
             this.Close();
+        }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+            visibleOffPannels();
+            ProductPanel.Show();// = true;
         }
     }
 }

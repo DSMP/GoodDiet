@@ -37,7 +37,7 @@
             System.Windows.Forms.Label wzrostLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ProductsButton = new System.Windows.Forms.Button();
             this.CustomersButton = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.CustomerPanel = new System.Windows.Forms.Panel();
@@ -86,6 +86,16 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.PermissionLabel = new System.Windows.Forms.Label();
             this.UsersPanel = new System.Windows.Forms.Panel();
+            this.FileDirectoryLabel = new System.Windows.Forms.Label();
+            this.OpenPhotoButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AdminCheckBox = new System.Windows.Forms.CheckBox();
+            this.SurnameTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.klienciDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,25 +105,25 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeesTableAdapter = new DobraDietaApp.DataSet1TableAdapters.EmployeesTableAdapter();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesTableAdapter = new DobraDietaApp.DataSet1TableAdapters.EmployeesTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.LoginTextBox = new System.Windows.Forms.TextBox();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.SurnameTextBox = new System.Windows.Forms.TextBox();
-            this.AdminCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.OpenPhotoButton = new System.Windows.Forms.Button();
-            this.FileDirectoryLabel = new System.Windows.Forms.Label();
+            this.ProductPanel = new System.Windows.Forms.Panel();
+            this.produktyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             id_klientLabel = new System.Windows.Forms.Label();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
@@ -135,6 +145,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            this.ProductPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // id_klientLabel
@@ -200,14 +212,15 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ProductsButton
             // 
-            this.button2.Location = new System.Drawing.Point(154, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(83, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Meals";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ProductsButton.Location = new System.Drawing.Point(154, 28);
+            this.ProductsButton.Name = "ProductsButton";
+            this.ProductsButton.Size = new System.Drawing.Size(83, 35);
+            this.ProductsButton.TabIndex = 1;
+            this.ProductsButton.Text = "Products";
+            this.ProductsButton.UseVisualStyleBackColor = true;
+            this.ProductsButton.Click += new System.EventHandler(this.ProductsButton_Click);
             // 
             // CustomersButton
             // 
@@ -372,6 +385,7 @@
             // id_klientTextBox
             // 
             this.id_klientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "id_klient", true));
+            this.id_klientTextBox.Enabled = false;
             this.id_klientTextBox.Location = new System.Drawing.Point(89, 30);
             this.id_klientTextBox.Name = "id_klientTextBox";
             this.id_klientTextBox.Size = new System.Drawing.Size(100, 20);
@@ -632,6 +646,92 @@
             this.UsersPanel.TabIndex = 10;
             this.UsersPanel.Visible = false;
             // 
+            // FileDirectoryLabel
+            // 
+            this.FileDirectoryLabel.AutoSize = true;
+            this.FileDirectoryLabel.Location = new System.Drawing.Point(294, 358);
+            this.FileDirectoryLabel.Name = "FileDirectoryLabel";
+            this.FileDirectoryLabel.Size = new System.Drawing.Size(66, 13);
+            this.FileDirectoryLabel.TabIndex = 13;
+            this.FileDirectoryLabel.Text = "File directory";
+            // 
+            // OpenPhotoButton
+            // 
+            this.OpenPhotoButton.Location = new System.Drawing.Point(297, 331);
+            this.OpenPhotoButton.Name = "OpenPhotoButton";
+            this.OpenPhotoButton.Size = new System.Drawing.Size(134, 24);
+            this.OpenPhotoButton.TabIndex = 12;
+            this.OpenPhotoButton.Text = "Open Photo";
+            this.OpenPhotoButton.UseVisualStyleBackColor = true;
+            this.OpenPhotoButton.Click += new System.EventHandler(this.OpenPhotoButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(227, 337);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "photo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(227, 311);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Surname";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(227, 279);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(227, 253);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Login";
+            // 
+            // AdminCheckBox
+            // 
+            this.AdminCheckBox.AutoSize = true;
+            this.AdminCheckBox.Location = new System.Drawing.Point(257, 392);
+            this.AdminCheckBox.Name = "AdminCheckBox";
+            this.AdminCheckBox.Size = new System.Drawing.Size(62, 17);
+            this.AdminCheckBox.TabIndex = 7;
+            this.AdminCheckBox.Text = "isAdmin";
+            this.AdminCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // SurnameTextBox
+            // 
+            this.SurnameTextBox.Location = new System.Drawing.Point(297, 305);
+            this.SurnameTextBox.Name = "SurnameTextBox";
+            this.SurnameTextBox.Size = new System.Drawing.Size(134, 20);
+            this.SurnameTextBox.TabIndex = 5;
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(297, 279);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(134, 20);
+            this.NameTextBox.TabIndex = 4;
+            // 
+            // LoginTextBox
+            // 
+            this.LoginTextBox.Location = new System.Drawing.Point(297, 253);
+            this.LoginTextBox.Name = "LoginTextBox";
+            this.LoginTextBox.Size = new System.Drawing.Size(134, 20);
+            this.LoginTextBox.TabIndex = 3;
+            // 
             // button7
             // 
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -663,38 +763,38 @@
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "id_klient";
-            this.dataGridViewTextBoxColumn12.HeaderText = "id_klient";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Client ID";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "imie";
-            this.dataGridViewTextBoxColumn13.HeaderText = "imie";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Name";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "nazwisko";
-            this.dataGridViewTextBoxColumn14.HeaderText = "nazwisko";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Surname";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "wiek";
-            this.dataGridViewTextBoxColumn15.HeaderText = "wiek";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Age";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
             // dataGridViewTextBoxColumn16
             // 
             this.dataGridViewTextBoxColumn16.DataPropertyName = "waga";
-            this.dataGridViewTextBoxColumn16.HeaderText = "waga";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Weight";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             // 
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.DataPropertyName = "wzrost";
-            this.dataGridViewTextBoxColumn17.HeaderText = "wzrost";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Height";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
             // employeesDataGridView
@@ -717,6 +817,50 @@
             this.employeesDataGridView.Size = new System.Drawing.Size(445, 224);
             this.employeesDataGridView.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "id_employee";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Employee ID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "login";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Login";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "surname";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "password";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "photo";
+            this.dataGridViewImageColumn1.HeaderText = "Photo";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            // 
             // employeesBindingSource
             // 
             this.employeesBindingSource.DataMember = "Employees";
@@ -726,146 +870,93 @@
             // 
             this.employeesTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "id_employee";
-            this.dataGridViewTextBoxColumn7.HeaderText = "id_employee";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "login";
-            this.dataGridViewTextBoxColumn8.HeaderText = "login";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn9.HeaderText = "name";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "surname";
-            this.dataGridViewTextBoxColumn10.HeaderText = "surname";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "password";
-            this.dataGridViewTextBoxColumn11.HeaderText = "password";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "photo";
-            this.dataGridViewImageColumn1.HeaderText = "photo";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // LoginTextBox
+            // ProductPanel
             // 
-            this.LoginTextBox.Location = new System.Drawing.Point(297, 253);
-            this.LoginTextBox.Name = "LoginTextBox";
-            this.LoginTextBox.Size = new System.Drawing.Size(134, 20);
-            this.LoginTextBox.TabIndex = 3;
+            this.ProductPanel.Controls.Add(this.produktyDataGridView);
+            this.ProductPanel.Location = new System.Drawing.Point(12, 69);
+            this.ProductPanel.Name = "ProductPanel";
+            this.ProductPanel.Size = new System.Drawing.Size(910, 489);
+            this.ProductPanel.TabIndex = 11;
             // 
-            // NameTextBox
+            // produktyDataGridView
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(297, 279);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(134, 20);
-            this.NameTextBox.TabIndex = 4;
+            this.produktyDataGridView.AutoGenerateColumns = false;
+            this.produktyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.produktyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25});
+            this.produktyDataGridView.DataSource = this.produktyBindingSource;
+            this.produktyDataGridView.Location = new System.Drawing.Point(3, 7);
+            this.produktyDataGridView.Name = "produktyDataGridView";
+            this.produktyDataGridView.Size = new System.Drawing.Size(895, 470);
+            this.produktyDataGridView.TabIndex = 0;
             // 
-            // SurnameTextBox
+            // dataGridViewTextBoxColumn18
             // 
-            this.SurnameTextBox.Location = new System.Drawing.Point(297, 305);
-            this.SurnameTextBox.Name = "SurnameTextBox";
-            this.SurnameTextBox.Size = new System.Drawing.Size(134, 20);
-            this.SurnameTextBox.TabIndex = 5;
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "id_produkty";
+            this.dataGridViewTextBoxColumn18.HeaderText = "id_produkty";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             // 
-            // AdminCheckBox
+            // dataGridViewTextBoxColumn19
             // 
-            this.AdminCheckBox.AutoSize = true;
-            this.AdminCheckBox.Location = new System.Drawing.Point(257, 392);
-            this.AdminCheckBox.Name = "AdminCheckBox";
-            this.AdminCheckBox.Size = new System.Drawing.Size(62, 17);
-            this.AdminCheckBox.TabIndex = 7;
-            this.AdminCheckBox.Text = "isAdmin";
-            this.AdminCheckBox.UseVisualStyleBackColor = true;
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "nazwa";
+            this.dataGridViewTextBoxColumn19.HeaderText = "nazwa";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
-            // label1
+            // dataGridViewTextBoxColumn20
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(227, 253);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Login";
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "ilosc";
+            this.dataGridViewTextBoxColumn20.HeaderText = "ilosc";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             // 
-            // label2
+            // dataGridViewTextBoxColumn21
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 279);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Name";
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "miara_domowa";
+            this.dataGridViewTextBoxColumn21.HeaderText = "miara_domowa";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
-            // label3
+            // dataGridViewTextBoxColumn22
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(227, 311);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Surname";
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "energia";
+            this.dataGridViewTextBoxColumn22.HeaderText = "energia";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             // 
-            // label4
+            // dataGridViewTextBoxColumn23
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(227, 337);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "photo";
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "bialko";
+            this.dataGridViewTextBoxColumn23.HeaderText = "bialko";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             // 
-            // OpenPhotoButton
+            // dataGridViewTextBoxColumn24
             // 
-            this.OpenPhotoButton.Location = new System.Drawing.Point(297, 331);
-            this.OpenPhotoButton.Name = "OpenPhotoButton";
-            this.OpenPhotoButton.Size = new System.Drawing.Size(134, 24);
-            this.OpenPhotoButton.TabIndex = 12;
-            this.OpenPhotoButton.Text = "Open Photo";
-            this.OpenPhotoButton.UseVisualStyleBackColor = true;
-            this.OpenPhotoButton.Click += new System.EventHandler(this.OpenPhotoButton_Click);
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "tlusz";
+            this.dataGridViewTextBoxColumn24.HeaderText = "tlusz";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             // 
-            // FileDirectoryLabel
+            // dataGridViewTextBoxColumn25
             // 
-            this.FileDirectoryLabel.AutoSize = true;
-            this.FileDirectoryLabel.Location = new System.Drawing.Point(294, 358);
-            this.FileDirectoryLabel.Name = "FileDirectoryLabel";
-            this.FileDirectoryLabel.Size = new System.Drawing.Size(66, 13);
-            this.FileDirectoryLabel.TabIndex = 13;
-            this.FileDirectoryLabel.Text = "File directory";
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "weglowodany";
+            this.dataGridViewTextBoxColumn25.HeaderText = "weglowodany";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 558);
+            this.Controls.Add(this.ProductPanel);
             this.Controls.Add(this.UsersPanel);
             this.Controls.Add(this.PermissionLabel);
             this.Controls.Add(this.LoginLabel);
@@ -874,7 +965,7 @@
             this.Controls.Add(this.CustomerPanel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.CustomersButton);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ProductsButton);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -897,6 +988,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            this.ProductPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -905,7 +998,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ProductsButton;
         private System.Windows.Forms.Button CustomersButton;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel CustomerPanel;
@@ -957,12 +1050,6 @@
         private System.Windows.Forms.BindingSource employeesBindingSource;
         private DataSet1TableAdapters.EmployeesTableAdapter employeesTableAdapter;
         private System.Windows.Forms.DataGridView klienciDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridView employeesDataGridView;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label4;
@@ -973,15 +1060,31 @@
         private System.Windows.Forms.TextBox SurnameTextBox;
         private System.Windows.Forms.TextBox NameTextBox;
         private System.Windows.Forms.TextBox LoginTextBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button OpenPhotoButton;
+        private System.Windows.Forms.Label FileDirectoryLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button OpenPhotoButton;
-        private System.Windows.Forms.Label FileDirectoryLabel;
+        private System.Windows.Forms.Panel ProductPanel;
+        private System.Windows.Forms.DataGridView produktyDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
     }
 }
 

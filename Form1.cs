@@ -152,8 +152,6 @@ namespace DobraDietaApp
             {
                 MessageBox.Show("First save Then choose meal");
             }
-            //db.Posilek_produkties.InsertOnSubmit(newPosilek);
-            //dt.Posilek_produkty.AddPosilek_produktyRow(mealRow.FirstOrDefault().IdMeal, productRow.FirstOrDefault().IdProduct);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -228,12 +226,11 @@ namespace DobraDietaApp
             {
                 MessageBox.Show("Fill all Fields");
             }
-            employeesDataGridView.DataSource = db.Employees;
+            employeesTableAdapter.Fill(this.dataSet1.Employees);
             try
             {
                 string insertStatement = "insert into pracownik_rola values (" + db.Employees.ToList().Last().id_employee + "," + (AdminCheckBox.Checked? 1 : 2) + ")";
                 db.ExecuteQuery<Posilek_produkty>(insertStatement);
-                SelectChanged(sender, e);
             }
             catch (Exception ex)
             {

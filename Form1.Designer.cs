@@ -154,7 +154,7 @@
             // id_klientLabel
             // 
             id_klientLabel.AutoSize = true;
-            id_klientLabel.Location = new System.Drawing.Point(29, 33);
+            id_klientLabel.Location = new System.Drawing.Point(24, 107);
             id_klientLabel.Name = "id_klientLabel";
             id_klientLabel.Size = new System.Drawing.Size(46, 13);
             id_klientLabel.TabIndex = 0;
@@ -163,7 +163,7 @@
             // imieLabel
             // 
             imieLabel.AutoSize = true;
-            imieLabel.Location = new System.Drawing.Point(29, 59);
+            imieLabel.Location = new System.Drawing.Point(24, 133);
             imieLabel.Name = "imieLabel";
             imieLabel.Size = new System.Drawing.Size(28, 13);
             imieLabel.TabIndex = 2;
@@ -172,7 +172,7 @@
             // nazwiskoLabel
             // 
             nazwiskoLabel.AutoSize = true;
-            nazwiskoLabel.Location = new System.Drawing.Point(29, 85);
+            nazwiskoLabel.Location = new System.Drawing.Point(24, 159);
             nazwiskoLabel.Name = "nazwiskoLabel";
             nazwiskoLabel.Size = new System.Drawing.Size(54, 13);
             nazwiskoLabel.TabIndex = 4;
@@ -181,7 +181,7 @@
             // wiekLabel
             // 
             wiekLabel.AutoSize = true;
-            wiekLabel.Location = new System.Drawing.Point(29, 111);
+            wiekLabel.Location = new System.Drawing.Point(24, 185);
             wiekLabel.Name = "wiekLabel";
             wiekLabel.Size = new System.Drawing.Size(32, 13);
             wiekLabel.TabIndex = 6;
@@ -190,7 +190,7 @@
             // wagaLabel
             // 
             wagaLabel.AutoSize = true;
-            wagaLabel.Location = new System.Drawing.Point(29, 137);
+            wagaLabel.Location = new System.Drawing.Point(24, 211);
             wagaLabel.Name = "wagaLabel";
             wagaLabel.Size = new System.Drawing.Size(36, 13);
             wagaLabel.TabIndex = 8;
@@ -199,7 +199,7 @@
             // wzrostLabel
             // 
             wzrostLabel.AutoSize = true;
-            wzrostLabel.Location = new System.Drawing.Point(29, 163);
+            wzrostLabel.Location = new System.Drawing.Point(24, 237);
             wzrostLabel.Name = "wzrostLabel";
             wzrostLabel.Size = new System.Drawing.Size(40, 13);
             wzrostLabel.TabIndex = 10;
@@ -248,6 +248,7 @@
             // 
             this.CustomerPanel.Controls.Add(this.ClientMealsDataGrid);
             this.CustomerPanel.Controls.Add(this.button6);
+            this.CustomerPanel.Controls.Add(this.UsersPanel);
             this.CustomerPanel.Controls.Add(this.button3);
             this.CustomerPanel.Controls.Add(this.ProductsList);
             this.CustomerPanel.Controls.Add(this.MealsProductsDataGridView);
@@ -274,13 +275,13 @@
             this.ClientMealsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ClientMealsDataGrid.Location = new System.Drawing.Point(211, 17);
             this.ClientMealsDataGrid.Name = "ClientMealsDataGrid";
-            this.ClientMealsDataGrid.Size = new System.Drawing.Size(679, 163);
+            this.ClientMealsDataGrid.Size = new System.Drawing.Size(679, 179);
             this.ClientMealsDataGrid.TabIndex = 17;
             this.ClientMealsDataGrid.SelectionChanged += new System.EventHandler(this.SelectChanged);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(20, 261);
+            this.button6.Location = new System.Drawing.Point(15, 335);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(185, 23);
             this.button6.TabIndex = 16;
@@ -290,7 +291,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(20, 231);
+            this.button3.Location = new System.Drawing.Point(15, 305);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 23);
             this.button3.TabIndex = 15;
@@ -304,7 +305,7 @@
             this.ProductsList.DisplayMember = "nazwa";
             this.ProductsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductsList.FormattingEnabled = true;
-            this.ProductsList.Location = new System.Drawing.Point(20, 203);
+            this.ProductsList.Location = new System.Drawing.Point(15, 277);
             this.ProductsList.Name = "ProductsList";
             this.ProductsList.Size = new System.Drawing.Size(185, 21);
             this.ProductsList.TabIndex = 14;
@@ -322,9 +323,11 @@
             // 
             // MealsProductsDataGridView
             // 
+            this.MealsProductsDataGridView.AllowUserToAddRows = false;
             this.MealsProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MealsProductsDataGridView.Location = new System.Drawing.Point(211, 203);
             this.MealsProductsDataGridView.Name = "MealsProductsDataGridView";
+            this.MealsProductsDataGridView.ReadOnly = true;
             this.MealsProductsDataGridView.Size = new System.Drawing.Size(679, 179);
             this.MealsProductsDataGridView.TabIndex = 13;
             this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
@@ -341,7 +344,7 @@
             this.idemployeeDataGridViewTextBoxColumn,
             this.datawprowadzeniaDataGridViewTextBoxColumn});
             this.posilekDataGridView.DataSource = this.posilekBindingSource;
-            this.posilekDataGridView.Location = new System.Drawing.Point(211, 30);
+            this.posilekDataGridView.Location = new System.Drawing.Point(199, 30);
             this.posilekDataGridView.Name = "posilekDataGridView";
             this.posilekDataGridView.Size = new System.Drawing.Size(679, 166);
             this.posilekDataGridView.TabIndex = 12;
@@ -399,7 +402,7 @@
             // 
             this.id_klientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "id_klient", true));
             this.id_klientTextBox.Enabled = false;
-            this.id_klientTextBox.Location = new System.Drawing.Point(89, 30);
+            this.id_klientTextBox.Location = new System.Drawing.Point(84, 104);
             this.id_klientTextBox.Name = "id_klientTextBox";
             this.id_klientTextBox.Size = new System.Drawing.Size(100, 20);
             this.id_klientTextBox.TabIndex = 1;
@@ -407,7 +410,7 @@
             // imieTextBox
             // 
             this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "imie", true));
-            this.imieTextBox.Location = new System.Drawing.Point(89, 56);
+            this.imieTextBox.Location = new System.Drawing.Point(84, 130);
             this.imieTextBox.Name = "imieTextBox";
             this.imieTextBox.Size = new System.Drawing.Size(100, 20);
             this.imieTextBox.TabIndex = 3;
@@ -415,7 +418,7 @@
             // nazwiskoTextBox
             // 
             this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "nazwisko", true));
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(89, 82);
+            this.nazwiskoTextBox.Location = new System.Drawing.Point(84, 156);
             this.nazwiskoTextBox.Name = "nazwiskoTextBox";
             this.nazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
             this.nazwiskoTextBox.TabIndex = 5;
@@ -423,7 +426,7 @@
             // wiekTextBox
             // 
             this.wiekTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wiek", true));
-            this.wiekTextBox.Location = new System.Drawing.Point(89, 108);
+            this.wiekTextBox.Location = new System.Drawing.Point(84, 182);
             this.wiekTextBox.Name = "wiekTextBox";
             this.wiekTextBox.Size = new System.Drawing.Size(100, 20);
             this.wiekTextBox.TabIndex = 7;
@@ -431,7 +434,7 @@
             // wagaTextBox
             // 
             this.wagaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "waga", true));
-            this.wagaTextBox.Location = new System.Drawing.Point(89, 134);
+            this.wagaTextBox.Location = new System.Drawing.Point(84, 208);
             this.wagaTextBox.Name = "wagaTextBox";
             this.wagaTextBox.Size = new System.Drawing.Size(100, 20);
             this.wagaTextBox.TabIndex = 9;
@@ -439,7 +442,7 @@
             // wzrostTextBox
             // 
             this.wzrostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wzrost", true));
-            this.wzrostTextBox.Location = new System.Drawing.Point(89, 160);
+            this.wzrostTextBox.Location = new System.Drawing.Point(84, 234);
             this.wzrostTextBox.Name = "wzrostTextBox";
             this.wzrostTextBox.Size = new System.Drawing.Size(100, 20);
             this.wzrostTextBox.TabIndex = 11;
@@ -641,6 +644,7 @@
             // UsersPanel
             // 
             this.UsersPanel.Controls.Add(this.FileDirectoryLabel);
+            this.UsersPanel.Controls.Add(this.ProductPanel);
             this.UsersPanel.Controls.Add(this.OpenPhotoButton);
             this.UsersPanel.Controls.Add(this.label4);
             this.UsersPanel.Controls.Add(this.label3);
@@ -653,7 +657,7 @@
             this.UsersPanel.Controls.Add(this.button7);
             this.UsersPanel.Controls.Add(this.klienciDataGridView);
             this.UsersPanel.Controls.Add(this.employeesDataGridView);
-            this.UsersPanel.Location = new System.Drawing.Point(12, 73);
+            this.UsersPanel.Location = new System.Drawing.Point(385, 261);
             this.UsersPanel.Name = "UsersPanel";
             this.UsersPanel.Size = new System.Drawing.Size(910, 489);
             this.UsersPanel.TabIndex = 10;
@@ -891,7 +895,7 @@
             // ProductPanel
             // 
             this.ProductPanel.Controls.Add(this.produktyDataGridView);
-            this.ProductPanel.Location = new System.Drawing.Point(12, 73);
+            this.ProductPanel.Location = new System.Drawing.Point(419, 231);
             this.ProductPanel.Name = "ProductPanel";
             this.ProductPanel.Size = new System.Drawing.Size(910, 489);
             this.ProductPanel.TabIndex = 11;
@@ -969,9 +973,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 558);
-            this.Controls.Add(this.ProductPanel);
             this.Controls.Add(this.PermissionLabel);
-            this.Controls.Add(this.UsersPanel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
             this.Controls.Add(this.LogoutButton);

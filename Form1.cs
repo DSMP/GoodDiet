@@ -20,6 +20,7 @@ namespace DobraDietaApp
         private int idOfProduct = 0;
         List<Panel> panels;
         byte[] bimage = null;
+        BindingSource ClientMealsBindingSource;
 
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
@@ -33,6 +34,7 @@ namespace DobraDietaApp
             dt = new DataSet1();
             productsRowsRemoved = new List<int>();
             panels = new List<Panel>();
+            ClientMealsBindingSource = new BindingSource();
             panels.Add(CustomerPanel);
             panels.Add(UsersPanel);
             panels.Add(ProductPanel);
@@ -84,7 +86,7 @@ namespace DobraDietaApp
             //this.employeesTableAdapter.Fill(this.dataSet1.Employees);
             // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
             //this.employeesTableAdapter.Fill(this.dataSet1.Employees);
-
+            
         }        
 
         private void klienciBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -141,9 +143,8 @@ namespace DobraDietaApp
                                                                                                                                       where employee.id_employee == meal.id_employee
                                                                                                                                       select new { employee.name }).First().name,
                                     meal.data_wprowadzenia };
-            //join employee in db.Employees on meal.id_employee equals employee.id_employee
-            //join typeMeal in db.typ_posilkus on meal.id_posilku equals typeMeal.id_typ_posilku
-            ClientMealsDataGrid.DataSource = fillMealTable;
+            ClientMealsBindingSource.DataSource = fillMealTable;
+            ClientMealsDataGrid.DataSource = ClientMealsBindingSource;
         }
 
         private void AddProductToMeal_Click(object sender, EventArgs e)

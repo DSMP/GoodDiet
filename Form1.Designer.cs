@@ -41,12 +41,55 @@
             this.CustomersButton = new System.Windows.Forms.Button();
             this.PeaopleButton = new System.Windows.Forms.Button();
             this.CustomerPanel = new System.Windows.Forms.Panel();
+            this.TypeOfMeals = new System.Windows.Forms.ComboBox();
+            this.typposilkuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new DobraDietaApp.DataSet1();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.RemoveMealButton = new System.Windows.Forms.Button();
+            this.AddMealButton = new System.Windows.Forms.Button();
             this.ClientMealsDataGrid = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
+            this.UsersPanel = new System.Windows.Forms.Panel();
+            this.FileDirectoryLabel = new System.Windows.Forms.Label();
+            this.ProductPanel = new System.Windows.Forms.Panel();
+            this.produktyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OpenPhotoButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AdminCheckBox = new System.Windows.Forms.CheckBox();
+            this.SurnameTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.LoginTextBox = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.klienciDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.ProductsList = new System.Windows.Forms.ComboBox();
-            this.produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new DobraDietaApp.DataSet1();
             this.MealsProductsDataGridView = new System.Windows.Forms.DataGridView();
             this.posilekDataGridView = new System.Windows.Forms.DataGridView();
             this.idposilkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +99,6 @@
             this.idemployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datawprowadzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posilekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.id_klientTextBox = new System.Windows.Forms.TextBox();
             this.imieTextBox = new System.Windows.Forms.TextBox();
             this.nazwiskoTextBox = new System.Windows.Forms.TextBox();
@@ -86,45 +128,12 @@
             this.fKidproduktuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.LoginLabel = new System.Windows.Forms.Label();
             this.PermissionLabel = new System.Windows.Forms.Label();
-            this.UsersPanel = new System.Windows.Forms.Panel();
-            this.FileDirectoryLabel = new System.Windows.Forms.Label();
-            this.OpenPhotoButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AdminCheckBox = new System.Windows.Forms.CheckBox();
-            this.SurnameTextBox = new System.Windows.Forms.TextBox();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.LoginTextBox = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.klienciDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new DobraDietaApp.DataSet1TableAdapters.EmployeesTableAdapter();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ProductPanel = new System.Windows.Forms.Panel();
-            this.produktyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fKidposilekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.typ_posilkuTableAdapter = new DobraDietaApp.DataSet1TableAdapters.typ_posilkuTableAdapter();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             id_klientLabel = new System.Windows.Forms.Label();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
@@ -132,23 +141,26 @@
             wagaLabel = new System.Windows.Forms.Label();
             wzrostLabel = new System.Windows.Forms.Label();
             this.CustomerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientMealsDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typposilkuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientMealsDataGrid)).BeginInit();
+            this.UsersPanel.SuspendLayout();
+            this.ProductPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingNavigator)).BeginInit();
             this.klienciBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posilek_produktyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidproduktuBindingSource)).BeginInit();
-            this.UsersPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
-            this.ProductPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKidposilekBindingSource)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // id_klientLabel
@@ -246,6 +258,10 @@
             // 
             // CustomerPanel
             // 
+            this.CustomerPanel.Controls.Add(this.TypeOfMeals);
+            this.CustomerPanel.Controls.Add(this.dateTimePicker1);
+            this.CustomerPanel.Controls.Add(this.RemoveMealButton);
+            this.CustomerPanel.Controls.Add(this.AddMealButton);
             this.CustomerPanel.Controls.Add(this.ClientMealsDataGrid);
             this.CustomerPanel.Controls.Add(this.button6);
             this.CustomerPanel.Controls.Add(this.UsersPanel);
@@ -267,8 +283,55 @@
             this.CustomerPanel.Controls.Add(this.wzrostTextBox);
             this.CustomerPanel.Location = new System.Drawing.Point(12, 73);
             this.CustomerPanel.Name = "CustomerPanel";
-            this.CustomerPanel.Size = new System.Drawing.Size(893, 485);
+            this.CustomerPanel.Size = new System.Drawing.Size(1315, 770);
             this.CustomerPanel.TabIndex = 4;
+            // 
+            // TypeOfMeals
+            // 
+            this.TypeOfMeals.DataSource = this.typposilkuBindingSource;
+            this.TypeOfMeals.DisplayMember = "name";
+            this.TypeOfMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeOfMeals.FormattingEnabled = true;
+            this.TypeOfMeals.Location = new System.Drawing.Point(48, 74);
+            this.TypeOfMeals.Name = "TypeOfMeals";
+            this.TypeOfMeals.Size = new System.Drawing.Size(100, 21);
+            this.TypeOfMeals.TabIndex = 21;
+            this.TypeOfMeals.ValueMember = "name";
+            // 
+            // typposilkuBindingSource
+            // 
+            this.typposilkuBindingSource.DataMember = "typ_posilku";
+            this.typposilkuBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(15, 47);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(190, 20);
+            this.dateTimePicker1.TabIndex = 20;
+            // 
+            // RemoveMealButton
+            // 
+            this.RemoveMealButton.Location = new System.Drawing.Point(96, 17);
+            this.RemoveMealButton.Name = "RemoveMealButton";
+            this.RemoveMealButton.Size = new System.Drawing.Size(88, 23);
+            this.RemoveMealButton.TabIndex = 19;
+            this.RemoveMealButton.Text = "Remove Meal";
+            this.RemoveMealButton.UseVisualStyleBackColor = true;
+            // 
+            // AddMealButton
+            // 
+            this.AddMealButton.Location = new System.Drawing.Point(15, 17);
+            this.AddMealButton.Name = "AddMealButton";
+            this.AddMealButton.Size = new System.Drawing.Size(75, 23);
+            this.AddMealButton.TabIndex = 18;
+            this.AddMealButton.Text = "Add Meal";
+            this.AddMealButton.UseVisualStyleBackColor = true;
             // 
             // ClientMealsDataGrid
             // 
@@ -288,358 +351,6 @@
             this.button6.Text = "Remove Product From Meal";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.RemoveProductFromMeal_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(15, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(185, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Add product to meal\r\n";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.AddProductToMeal_Click);
-            // 
-            // ProductsList
-            // 
-            this.ProductsList.DataSource = this.produktyBindingSource;
-            this.ProductsList.DisplayMember = "nazwa";
-            this.ProductsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductsList.FormattingEnabled = true;
-            this.ProductsList.Location = new System.Drawing.Point(15, 277);
-            this.ProductsList.Name = "ProductsList";
-            this.ProductsList.Size = new System.Drawing.Size(185, 21);
-            this.ProductsList.TabIndex = 14;
-            this.ProductsList.ValueMember = "nazwa";
-            // 
-            // produktyBindingSource
-            // 
-            this.produktyBindingSource.DataMember = "Produkty";
-            this.produktyBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // MealsProductsDataGridView
-            // 
-            this.MealsProductsDataGridView.AllowUserToAddRows = false;
-            this.MealsProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MealsProductsDataGridView.Location = new System.Drawing.Point(211, 203);
-            this.MealsProductsDataGridView.Name = "MealsProductsDataGridView";
-            this.MealsProductsDataGridView.ReadOnly = true;
-            this.MealsProductsDataGridView.Size = new System.Drawing.Size(679, 179);
-            this.MealsProductsDataGridView.TabIndex = 13;
-            this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
-            // 
-            // posilekDataGridView
-            // 
-            this.posilekDataGridView.AutoGenerateColumns = false;
-            this.posilekDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.posilekDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idposilkuDataGridViewTextBoxColumn,
-            this.idklientDataGridViewTextBoxColumn,
-            this.idtypposilkuDataGridViewTextBoxColumn,
-            this.dataposilkuDataGridViewTextBoxColumn,
-            this.idemployeeDataGridViewTextBoxColumn,
-            this.datawprowadzeniaDataGridViewTextBoxColumn});
-            this.posilekDataGridView.DataSource = this.posilekBindingSource;
-            this.posilekDataGridView.Location = new System.Drawing.Point(199, 30);
-            this.posilekDataGridView.Name = "posilekDataGridView";
-            this.posilekDataGridView.Size = new System.Drawing.Size(679, 166);
-            this.posilekDataGridView.TabIndex = 12;
-            this.posilekDataGridView.Visible = false;
-            this.posilekDataGridView.SelectionChanged += new System.EventHandler(this.SelectChanged);
-            // 
-            // idposilkuDataGridViewTextBoxColumn
-            // 
-            this.idposilkuDataGridViewTextBoxColumn.DataPropertyName = "id_posilku";
-            this.idposilkuDataGridViewTextBoxColumn.HeaderText = "id_posilku";
-            this.idposilkuDataGridViewTextBoxColumn.Name = "idposilkuDataGridViewTextBoxColumn";
-            this.idposilkuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idklientDataGridViewTextBoxColumn
-            // 
-            this.idklientDataGridViewTextBoxColumn.DataPropertyName = "id_klient";
-            this.idklientDataGridViewTextBoxColumn.HeaderText = "id_klient";
-            this.idklientDataGridViewTextBoxColumn.Name = "idklientDataGridViewTextBoxColumn";
-            // 
-            // idtypposilkuDataGridViewTextBoxColumn
-            // 
-            this.idtypposilkuDataGridViewTextBoxColumn.DataPropertyName = "id_typ_posilku";
-            this.idtypposilkuDataGridViewTextBoxColumn.HeaderText = "id_typ_posilku";
-            this.idtypposilkuDataGridViewTextBoxColumn.Name = "idtypposilkuDataGridViewTextBoxColumn";
-            // 
-            // dataposilkuDataGridViewTextBoxColumn
-            // 
-            this.dataposilkuDataGridViewTextBoxColumn.DataPropertyName = "data_posilku";
-            this.dataposilkuDataGridViewTextBoxColumn.HeaderText = "data_posilku";
-            this.dataposilkuDataGridViewTextBoxColumn.Name = "dataposilkuDataGridViewTextBoxColumn";
-            // 
-            // idemployeeDataGridViewTextBoxColumn
-            // 
-            this.idemployeeDataGridViewTextBoxColumn.DataPropertyName = "id_employee";
-            this.idemployeeDataGridViewTextBoxColumn.HeaderText = "id_employee";
-            this.idemployeeDataGridViewTextBoxColumn.Name = "idemployeeDataGridViewTextBoxColumn";
-            // 
-            // datawprowadzeniaDataGridViewTextBoxColumn
-            // 
-            this.datawprowadzeniaDataGridViewTextBoxColumn.DataPropertyName = "data_wprowadzenia";
-            this.datawprowadzeniaDataGridViewTextBoxColumn.HeaderText = "data_wprowadzenia";
-            this.datawprowadzeniaDataGridViewTextBoxColumn.Name = "datawprowadzeniaDataGridViewTextBoxColumn";
-            // 
-            // posilekBindingSource
-            // 
-            this.posilekBindingSource.DataMember = "FK_id_klient";
-            this.posilekBindingSource.DataSource = this.klienciBindingSource;
-            // 
-            // klienciBindingSource
-            // 
-            this.klienciBindingSource.DataMember = "Klienci";
-            this.klienciBindingSource.DataSource = this.dataSet1;
-            // 
-            // id_klientTextBox
-            // 
-            this.id_klientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "id_klient", true));
-            this.id_klientTextBox.Enabled = false;
-            this.id_klientTextBox.Location = new System.Drawing.Point(84, 104);
-            this.id_klientTextBox.Name = "id_klientTextBox";
-            this.id_klientTextBox.Size = new System.Drawing.Size(100, 20);
-            this.id_klientTextBox.TabIndex = 1;
-            // 
-            // imieTextBox
-            // 
-            this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "imie", true));
-            this.imieTextBox.Location = new System.Drawing.Point(84, 130);
-            this.imieTextBox.Name = "imieTextBox";
-            this.imieTextBox.Size = new System.Drawing.Size(100, 20);
-            this.imieTextBox.TabIndex = 3;
-            // 
-            // nazwiskoTextBox
-            // 
-            this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "nazwisko", true));
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(84, 156);
-            this.nazwiskoTextBox.Name = "nazwiskoTextBox";
-            this.nazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nazwiskoTextBox.TabIndex = 5;
-            // 
-            // wiekTextBox
-            // 
-            this.wiekTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wiek", true));
-            this.wiekTextBox.Location = new System.Drawing.Point(84, 182);
-            this.wiekTextBox.Name = "wiekTextBox";
-            this.wiekTextBox.Size = new System.Drawing.Size(100, 20);
-            this.wiekTextBox.TabIndex = 7;
-            // 
-            // wagaTextBox
-            // 
-            this.wagaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "waga", true));
-            this.wagaTextBox.Location = new System.Drawing.Point(84, 208);
-            this.wagaTextBox.Name = "wagaTextBox";
-            this.wagaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.wagaTextBox.TabIndex = 9;
-            // 
-            // wzrostTextBox
-            // 
-            this.wzrostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wzrost", true));
-            this.wzrostTextBox.Location = new System.Drawing.Point(84, 234);
-            this.wzrostTextBox.Name = "wzrostTextBox";
-            this.wzrostTextBox.Size = new System.Drawing.Size(100, 20);
-            this.wzrostTextBox.TabIndex = 11;
-            // 
-            // LogoutButton
-            // 
-            this.LogoutButton.Location = new System.Drawing.Point(555, 28);
-            this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(87, 35);
-            this.LogoutButton.TabIndex = 6;
-            this.LogoutButton.Text = "Logout";
-            this.LogoutButton.UseVisualStyleBackColor = true;
-            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
-            // 
-            // klienciTableAdapter
-            // 
-            this.klienciTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EmployeesTableAdapter = null;
-            this.tableAdapterManager.KlienciTableAdapter = this.klienciTableAdapter;
-            this.tableAdapterManager.Posilek_produktyTableAdapter = this.posilek_produktyTableAdapter;
-            this.tableAdapterManager.PosilekTableAdapter = this.posilekTableAdapter;
-            this.tableAdapterManager.pracownik_rolaTableAdapter = null;
-            this.tableAdapterManager.ProduktyTableAdapter = this.produktyTableAdapter;
-            this.tableAdapterManager.RolesTableAdapter = null;
-            this.tableAdapterManager.typ_posilkuTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = DobraDietaApp.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // posilek_produktyTableAdapter
-            // 
-            this.posilek_produktyTableAdapter.ClearBeforeFill = true;
-            // 
-            // posilekTableAdapter
-            // 
-            this.posilekTableAdapter.ClearBeforeFill = true;
-            // 
-            // produktyTableAdapter
-            // 
-            this.produktyTableAdapter.ClearBeforeFill = true;
-            // 
-            // klienciBindingNavigator
-            // 
-            this.klienciBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.klienciBindingNavigator.BindingSource = this.klienciBindingSource;
-            this.klienciBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.klienciBindingNavigator.DeleteItem = null;
-            this.klienciBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.klienciBindingNavigatorSaveItem});
-            this.klienciBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.klienciBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.klienciBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.klienciBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.klienciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.klienciBindingNavigator.Name = "klienciBindingNavigator";
-            this.klienciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.klienciBindingNavigator.Size = new System.Drawing.Size(922, 25);
-            this.klienciBindingNavigator.TabIndex = 7;
-            this.klienciBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.ClearProductsOfMeals);
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.ClearProductsOfMeals);
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
-            // klienciBindingNavigatorSaveItem
-            // 
-            this.klienciBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.klienciBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("klienciBindingNavigatorSaveItem.Image")));
-            this.klienciBindingNavigatorSaveItem.Name = "klienciBindingNavigatorSaveItem";
-            this.klienciBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.klienciBindingNavigatorSaveItem.Text = "Save Data";
-            this.klienciBindingNavigatorSaveItem.Click += new System.EventHandler(this.klienciBindingNavigatorSaveItem_Click);
-            // 
-            // posilek_produktyBindingSource
-            // 
-            this.posilek_produktyBindingSource.DataMember = "FK_id_posilek";
-            this.posilek_produktyBindingSource.DataSource = this.posilekBindingSource;
-            // 
-            // fKidproduktuBindingSource
-            // 
-            this.fKidproduktuBindingSource.DataMember = "FK_id_produktu";
-            this.fKidproduktuBindingSource.DataSource = this.produktyBindingSource;
-            // 
-            // LoginLabel
-            // 
-            this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Location = new System.Drawing.Point(743, 28);
-            this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(33, 13);
-            this.LoginLabel.TabIndex = 8;
-            this.LoginLabel.Text = "Login";
-            // 
-            // PermissionLabel
-            // 
-            this.PermissionLabel.AutoSize = true;
-            this.PermissionLabel.Location = new System.Drawing.Point(823, 28);
-            this.PermissionLabel.Name = "PermissionLabel";
-            this.PermissionLabel.Size = new System.Drawing.Size(57, 13);
-            this.PermissionLabel.TabIndex = 9;
-            this.PermissionLabel.Text = "Permission";
             // 
             // UsersPanel
             // 
@@ -671,6 +382,87 @@
             this.FileDirectoryLabel.Size = new System.Drawing.Size(66, 13);
             this.FileDirectoryLabel.TabIndex = 13;
             this.FileDirectoryLabel.Text = "File directory";
+            // 
+            // ProductPanel
+            // 
+            this.ProductPanel.Controls.Add(this.produktyDataGridView);
+            this.ProductPanel.Location = new System.Drawing.Point(419, 231);
+            this.ProductPanel.Name = "ProductPanel";
+            this.ProductPanel.Size = new System.Drawing.Size(910, 489);
+            this.ProductPanel.TabIndex = 11;
+            // 
+            // produktyDataGridView
+            // 
+            this.produktyDataGridView.AutoGenerateColumns = false;
+            this.produktyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.produktyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25});
+            this.produktyDataGridView.DataSource = this.produktyBindingSource;
+            this.produktyDataGridView.Location = new System.Drawing.Point(3, 7);
+            this.produktyDataGridView.Name = "produktyDataGridView";
+            this.produktyDataGridView.Size = new System.Drawing.Size(895, 470);
+            this.produktyDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "id_produkty";
+            this.dataGridViewTextBoxColumn18.HeaderText = "id_produkty";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "nazwa";
+            this.dataGridViewTextBoxColumn19.HeaderText = "nazwa";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "ilosc";
+            this.dataGridViewTextBoxColumn20.HeaderText = "ilosc";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "miara_domowa";
+            this.dataGridViewTextBoxColumn21.HeaderText = "miara_domowa";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "energia";
+            this.dataGridViewTextBoxColumn22.HeaderText = "energia";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "bialko";
+            this.dataGridViewTextBoxColumn23.HeaderText = "bialko";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "tlusz";
+            this.dataGridViewTextBoxColumn24.HeaderText = "tlusz";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "weglowodany";
+            this.dataGridViewTextBoxColumn25.HeaderText = "weglowodany";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
+            // produktyBindingSource
+            // 
+            this.produktyBindingSource.DataMember = "Produkty";
+            this.produktyBindingSource.DataSource = this.dataSet1;
             // 
             // OpenPhotoButton
             // 
@@ -814,6 +606,11 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Height";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
+            // klienciBindingSource
+            // 
+            this.klienciBindingSource.DataMember = "Klienci";
+            this.klienciBindingSource.DataSource = this.dataSet1;
+            // 
             // employeesDataGridView
             // 
             this.employeesDataGridView.AllowUserToAddRows = false;
@@ -883,6 +680,343 @@
             this.employeesBindingSource.DataMember = "Employees";
             this.employeesBindingSource.DataSource = this.dataSet1;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(15, 305);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(185, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Add product to meal\r\n";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.AddProductToMeal_Click);
+            // 
+            // ProductsList
+            // 
+            this.ProductsList.DataSource = this.produktyBindingSource;
+            this.ProductsList.DisplayMember = "nazwa";
+            this.ProductsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductsList.FormattingEnabled = true;
+            this.ProductsList.Location = new System.Drawing.Point(15, 277);
+            this.ProductsList.Name = "ProductsList";
+            this.ProductsList.Size = new System.Drawing.Size(185, 21);
+            this.ProductsList.TabIndex = 14;
+            this.ProductsList.ValueMember = "nazwa";
+            // 
+            // MealsProductsDataGridView
+            // 
+            this.MealsProductsDataGridView.AllowUserToAddRows = false;
+            this.MealsProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MealsProductsDataGridView.Location = new System.Drawing.Point(211, 203);
+            this.MealsProductsDataGridView.Name = "MealsProductsDataGridView";
+            this.MealsProductsDataGridView.ReadOnly = true;
+            this.MealsProductsDataGridView.Size = new System.Drawing.Size(679, 179);
+            this.MealsProductsDataGridView.TabIndex = 13;
+            this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
+            // 
+            // posilekDataGridView
+            // 
+            this.posilekDataGridView.AutoGenerateColumns = false;
+            this.posilekDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.posilekDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idposilkuDataGridViewTextBoxColumn,
+            this.idklientDataGridViewTextBoxColumn,
+            this.idtypposilkuDataGridViewTextBoxColumn,
+            this.dataposilkuDataGridViewTextBoxColumn,
+            this.idemployeeDataGridViewTextBoxColumn,
+            this.datawprowadzeniaDataGridViewTextBoxColumn});
+            this.posilekDataGridView.DataSource = this.posilekBindingSource;
+            this.posilekDataGridView.Location = new System.Drawing.Point(199, 30);
+            this.posilekDataGridView.Name = "posilekDataGridView";
+            this.posilekDataGridView.Size = new System.Drawing.Size(679, 166);
+            this.posilekDataGridView.TabIndex = 12;
+            this.posilekDataGridView.Visible = false;
+            this.posilekDataGridView.SelectionChanged += new System.EventHandler(this.SelectChanged);
+            // 
+            // idposilkuDataGridViewTextBoxColumn
+            // 
+            this.idposilkuDataGridViewTextBoxColumn.DataPropertyName = "id_posilku";
+            this.idposilkuDataGridViewTextBoxColumn.HeaderText = "id_posilku";
+            this.idposilkuDataGridViewTextBoxColumn.Name = "idposilkuDataGridViewTextBoxColumn";
+            this.idposilkuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idklientDataGridViewTextBoxColumn
+            // 
+            this.idklientDataGridViewTextBoxColumn.DataPropertyName = "id_klient";
+            this.idklientDataGridViewTextBoxColumn.HeaderText = "id_klient";
+            this.idklientDataGridViewTextBoxColumn.Name = "idklientDataGridViewTextBoxColumn";
+            // 
+            // idtypposilkuDataGridViewTextBoxColumn
+            // 
+            this.idtypposilkuDataGridViewTextBoxColumn.DataPropertyName = "id_typ_posilku";
+            this.idtypposilkuDataGridViewTextBoxColumn.HeaderText = "id_typ_posilku";
+            this.idtypposilkuDataGridViewTextBoxColumn.Name = "idtypposilkuDataGridViewTextBoxColumn";
+            // 
+            // dataposilkuDataGridViewTextBoxColumn
+            // 
+            this.dataposilkuDataGridViewTextBoxColumn.DataPropertyName = "data_posilku";
+            this.dataposilkuDataGridViewTextBoxColumn.HeaderText = "data_posilku";
+            this.dataposilkuDataGridViewTextBoxColumn.Name = "dataposilkuDataGridViewTextBoxColumn";
+            // 
+            // idemployeeDataGridViewTextBoxColumn
+            // 
+            this.idemployeeDataGridViewTextBoxColumn.DataPropertyName = "id_employee";
+            this.idemployeeDataGridViewTextBoxColumn.HeaderText = "id_employee";
+            this.idemployeeDataGridViewTextBoxColumn.Name = "idemployeeDataGridViewTextBoxColumn";
+            // 
+            // datawprowadzeniaDataGridViewTextBoxColumn
+            // 
+            this.datawprowadzeniaDataGridViewTextBoxColumn.DataPropertyName = "data_wprowadzenia";
+            this.datawprowadzeniaDataGridViewTextBoxColumn.HeaderText = "data_wprowadzenia";
+            this.datawprowadzeniaDataGridViewTextBoxColumn.Name = "datawprowadzeniaDataGridViewTextBoxColumn";
+            // 
+            // posilekBindingSource
+            // 
+            this.posilekBindingSource.DataMember = "FK_id_klient";
+            this.posilekBindingSource.DataSource = this.klienciBindingSource;
+            // 
+            // id_klientTextBox
+            // 
+            this.id_klientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "id_klient", true));
+            this.id_klientTextBox.Enabled = false;
+            this.id_klientTextBox.Location = new System.Drawing.Point(84, 104);
+            this.id_klientTextBox.Name = "id_klientTextBox";
+            this.id_klientTextBox.Size = new System.Drawing.Size(100, 20);
+            this.id_klientTextBox.TabIndex = 1;
+            // 
+            // imieTextBox
+            // 
+            this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "imie", true));
+            this.imieTextBox.Location = new System.Drawing.Point(84, 130);
+            this.imieTextBox.Name = "imieTextBox";
+            this.imieTextBox.Size = new System.Drawing.Size(100, 20);
+            this.imieTextBox.TabIndex = 3;
+            // 
+            // nazwiskoTextBox
+            // 
+            this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "nazwisko", true));
+            this.nazwiskoTextBox.Location = new System.Drawing.Point(84, 156);
+            this.nazwiskoTextBox.Name = "nazwiskoTextBox";
+            this.nazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nazwiskoTextBox.TabIndex = 5;
+            // 
+            // wiekTextBox
+            // 
+            this.wiekTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wiek", true));
+            this.wiekTextBox.Location = new System.Drawing.Point(84, 182);
+            this.wiekTextBox.Name = "wiekTextBox";
+            this.wiekTextBox.Size = new System.Drawing.Size(100, 20);
+            this.wiekTextBox.TabIndex = 7;
+            // 
+            // wagaTextBox
+            // 
+            this.wagaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "waga", true));
+            this.wagaTextBox.Location = new System.Drawing.Point(84, 208);
+            this.wagaTextBox.Name = "wagaTextBox";
+            this.wagaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.wagaTextBox.TabIndex = 9;
+            // 
+            // wzrostTextBox
+            // 
+            this.wzrostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wzrost", true));
+            this.wzrostTextBox.Location = new System.Drawing.Point(84, 234);
+            this.wzrostTextBox.Name = "wzrostTextBox";
+            this.wzrostTextBox.Size = new System.Drawing.Size(100, 20);
+            this.wzrostTextBox.TabIndex = 11;
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.Location = new System.Drawing.Point(555, 28);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(87, 35);
+            this.LogoutButton.TabIndex = 6;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // klienciTableAdapter
+            // 
+            this.klienciTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmployeesTableAdapter = null;
+            this.tableAdapterManager.KlienciTableAdapter = this.klienciTableAdapter;
+            this.tableAdapterManager.Posilek_produktyTableAdapter = this.posilek_produktyTableAdapter;
+            this.tableAdapterManager.PosilekTableAdapter = this.posilekTableAdapter;
+            this.tableAdapterManager.pracownik_rolaTableAdapter = null;
+            this.tableAdapterManager.ProduktyTableAdapter = this.produktyTableAdapter;
+            this.tableAdapterManager.RolesTableAdapter = null;
+            this.tableAdapterManager.typ_posilkuTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = DobraDietaApp.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // posilek_produktyTableAdapter
+            // 
+            this.posilek_produktyTableAdapter.ClearBeforeFill = true;
+            // 
+            // posilekTableAdapter
+            // 
+            this.posilekTableAdapter.ClearBeforeFill = true;
+            // 
+            // produktyTableAdapter
+            // 
+            this.produktyTableAdapter.ClearBeforeFill = true;
+            // 
+            // klienciBindingNavigator
+            // 
+            this.klienciBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.klienciBindingNavigator.BindingSource = this.klienciBindingSource;
+            this.klienciBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.klienciBindingNavigator.DeleteItem = null;
+            this.klienciBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.klienciBindingNavigatorSaveItem});
+            this.klienciBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.klienciBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.klienciBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.klienciBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.klienciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.klienciBindingNavigator.Name = "klienciBindingNavigator";
+            this.klienciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.klienciBindingNavigator.Size = new System.Drawing.Size(1327, 25);
+            this.klienciBindingNavigator.TabIndex = 7;
+            this.klienciBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.ClearProductsOfMeals);
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.ClearProductsOfMeals);
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // klienciBindingNavigatorSaveItem
+            // 
+            this.klienciBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.klienciBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("klienciBindingNavigatorSaveItem.Image")));
+            this.klienciBindingNavigatorSaveItem.Name = "klienciBindingNavigatorSaveItem";
+            this.klienciBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.klienciBindingNavigatorSaveItem.Text = "Save Data";
+            this.klienciBindingNavigatorSaveItem.Click += new System.EventHandler(this.klienciBindingNavigatorSaveItem_Click);
+            // 
+            // posilek_produktyBindingSource
+            // 
+            this.posilek_produktyBindingSource.DataMember = "FK_id_posilek";
+            this.posilek_produktyBindingSource.DataSource = this.posilekBindingSource;
+            // 
+            // fKidproduktuBindingSource
+            // 
+            this.fKidproduktuBindingSource.DataMember = "FK_id_produktu";
+            this.fKidproduktuBindingSource.DataSource = this.produktyBindingSource;
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Location = new System.Drawing.Point(743, 28);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(33, 13);
+            this.LoginLabel.TabIndex = 8;
+            this.LoginLabel.Text = "Login";
+            // 
+            // PermissionLabel
+            // 
+            this.PermissionLabel.AutoSize = true;
+            this.PermissionLabel.Location = new System.Drawing.Point(823, 28);
+            this.PermissionLabel.Name = "PermissionLabel";
+            this.PermissionLabel.Size = new System.Drawing.Size(57, 13);
+            this.PermissionLabel.TabIndex = 9;
+            this.PermissionLabel.Text = "Permission";
+            // 
             // employeesTableAdapter
             // 
             this.employeesTableAdapter.ClearBeforeFill = true;
@@ -892,87 +1026,39 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // ProductPanel
+            // fKidposilekBindingSource
             // 
-            this.ProductPanel.Controls.Add(this.produktyDataGridView);
-            this.ProductPanel.Location = new System.Drawing.Point(419, 231);
-            this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(910, 489);
-            this.ProductPanel.TabIndex = 11;
+            this.fKidposilekBindingSource.DataMember = "FK_id_posilek";
+            this.fKidposilekBindingSource.DataSource = this.posilekBindingSource;
             // 
-            // produktyDataGridView
+            // typ_posilkuTableAdapter
             // 
-            this.produktyDataGridView.AutoGenerateColumns = false;
-            this.produktyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.produktyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25});
-            this.produktyDataGridView.DataSource = this.produktyBindingSource;
-            this.produktyDataGridView.Location = new System.Drawing.Point(3, 7);
-            this.produktyDataGridView.Name = "produktyDataGridView";
-            this.produktyDataGridView.Size = new System.Drawing.Size(895, 470);
-            this.produktyDataGridView.TabIndex = 0;
+            this.typ_posilkuTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn18
+            // fillByToolStrip
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "id_produkty";
-            this.dataGridViewTextBoxColumn18.HeaderText = "id_produkty";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1327, 25);
+            this.fillByToolStrip.TabIndex = 10;
+            this.fillByToolStrip.Text = "fillByToolStrip";
             // 
-            // dataGridViewTextBoxColumn19
+            // fillByToolStripButton
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "nazwa";
-            this.dataGridViewTextBoxColumn19.HeaderText = "nazwa";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "ilosc";
-            this.dataGridViewTextBoxColumn20.HeaderText = "ilosc";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "miara_domowa";
-            this.dataGridViewTextBoxColumn21.HeaderText = "miara_domowa";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "energia";
-            this.dataGridViewTextBoxColumn22.HeaderText = "energia";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "bialko";
-            this.dataGridViewTextBoxColumn23.HeaderText = "bialko";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "tlusz";
-            this.dataGridViewTextBoxColumn24.HeaderText = "tlusz";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "weglowodany";
-            this.dataGridViewTextBoxColumn25.HeaderText = "weglowodany";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 558);
+            this.ClientSize = new System.Drawing.Size(1327, 843);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.PermissionLabel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
@@ -987,25 +1073,29 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.CustomerPanel.ResumeLayout(false);
             this.CustomerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientMealsDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typposilkuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientMealsDataGrid)).EndInit();
+            this.UsersPanel.ResumeLayout(false);
+            this.UsersPanel.PerformLayout();
+            this.ProductPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingNavigator)).EndInit();
             this.klienciBindingNavigator.ResumeLayout(false);
             this.klienciBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posilek_produktyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidproduktuBindingSource)).EndInit();
-            this.UsersPanel.ResumeLayout(false);
-            this.UsersPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
-            this.ProductPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKidposilekBindingSource)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1102,6 +1192,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataposilkuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idemployeeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datawprowadzeniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button RemoveMealButton;
+        private System.Windows.Forms.Button AddMealButton;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox TypeOfMeals;
+        private System.Windows.Forms.BindingSource fKidposilekBindingSource;
+        private System.Windows.Forms.BindingSource typposilkuBindingSource;
+        private DataSet1TableAdapters.typ_posilkuTableAdapter typ_posilkuTableAdapter;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
 

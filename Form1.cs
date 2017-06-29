@@ -72,6 +72,8 @@ namespace DobraDietaApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet1.typ_posilku' table. You can move, or remove it, as needed.
+            this.typ_posilkuTableAdapter.Fill(this.dataSet1.typ_posilku);
             // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
             this.employeesTableAdapter.Fill(this.dataSet1.Employees);
             // TODO: This line of code loads data into the 'dataSet1.Posilek_produkty' table. You can move, or remove it, as needed.
@@ -288,6 +290,19 @@ namespace DobraDietaApp
         {
             visibleOffPannels();
             ProductPanel.Show();
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.typ_posilkuTableAdapter.FillBy(this.dataSet1.typ_posilku);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

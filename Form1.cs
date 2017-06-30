@@ -211,8 +211,15 @@ namespace DobraDietaApp
 
         private void productSelectionChanged(object sender, EventArgs e)
         {
-            int Selectedproduct = MealsProductsDataGridView.CurrentCell.RowIndex;
-            idOfProduct = (int)MealsProductsDataGridView.Rows[Selectedproduct].Cells[0].Value;
+            try
+            {
+                int Selectedproduct = MealsProductsDataGridView.CurrentCell.RowIndex;
+                idOfProduct = (int)MealsProductsDataGridView.Rows[Selectedproduct].Cells[0].Value;
+            }
+            catch (Exception)
+            {
+                
+            }
         }
 
         private void RemoveProductFromMeal_Click(object sender, EventArgs e)

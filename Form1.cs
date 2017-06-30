@@ -59,6 +59,7 @@ namespace DobraDietaApp
             LoginLabel.Text = UserLogin;
             PermissionLabel.Text = Role;
             PeaopleButton.Visible = Role.Equals("ADMIN") ? true : false;
+            RemoveMealButton.Visible = Role.Equals("ADMIN") ? true : false;
         }
 
         private void CustomersButton_Click(object sender, EventArgs e)

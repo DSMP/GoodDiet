@@ -91,13 +91,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.ProductsList = new System.Windows.Forms.ComboBox();
             this.MealsProductsDataGridView = new System.Windows.Forms.DataGridView();
-            this.posilekDataGridView = new System.Windows.Forms.DataGridView();
-            this.idposilkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idklientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idtypposilkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataposilkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idemployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datawprowadzeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posilekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.id_klientTextBox = new System.Windows.Forms.TextBox();
             this.imieTextBox = new System.Windows.Forms.TextBox();
@@ -151,7 +144,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.posilekDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingNavigator)).BeginInit();
             this.klienciBindingNavigator.SuspendLayout();
@@ -261,11 +253,9 @@
             this.CustomerPanel.Controls.Add(this.AddMealButton);
             this.CustomerPanel.Controls.Add(this.ClientMealsDataGrid);
             this.CustomerPanel.Controls.Add(this.button6);
-            this.CustomerPanel.Controls.Add(this.UsersPanel);
             this.CustomerPanel.Controls.Add(this.button3);
             this.CustomerPanel.Controls.Add(this.ProductsList);
             this.CustomerPanel.Controls.Add(this.MealsProductsDataGridView);
-            this.CustomerPanel.Controls.Add(this.posilekDataGridView);
             this.CustomerPanel.Controls.Add(id_klientLabel);
             this.CustomerPanel.Controls.Add(this.id_klientTextBox);
             this.CustomerPanel.Controls.Add(imieLabel);
@@ -354,7 +344,6 @@
             // UsersPanel
             // 
             this.UsersPanel.Controls.Add(this.FileDirectoryLabel);
-            this.UsersPanel.Controls.Add(this.ProductPanel);
             this.UsersPanel.Controls.Add(this.OpenPhotoButton);
             this.UsersPanel.Controls.Add(this.label4);
             this.UsersPanel.Controls.Add(this.label3);
@@ -367,7 +356,7 @@
             this.UsersPanel.Controls.Add(this.button7);
             this.UsersPanel.Controls.Add(this.klienciDataGridView);
             this.UsersPanel.Controls.Add(this.employeesDataGridView);
-            this.UsersPanel.Location = new System.Drawing.Point(385, 261);
+            this.UsersPanel.Location = new System.Drawing.Point(12, 73);
             this.UsersPanel.Name = "UsersPanel";
             this.UsersPanel.Size = new System.Drawing.Size(910, 489);
             this.UsersPanel.TabIndex = 10;
@@ -385,7 +374,7 @@
             // ProductPanel
             // 
             this.ProductPanel.Controls.Add(this.produktyDataGridView);
-            this.ProductPanel.Location = new System.Drawing.Point(419, 231);
+            this.ProductPanel.Location = new System.Drawing.Point(12, 73);
             this.ProductPanel.Name = "ProductPanel";
             this.ProductPanel.Size = new System.Drawing.Size(910, 489);
             this.ProductPanel.TabIndex = 11;
@@ -712,62 +701,6 @@
             this.MealsProductsDataGridView.TabIndex = 13;
             this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
             // 
-            // posilekDataGridView
-            // 
-            this.posilekDataGridView.AutoGenerateColumns = false;
-            this.posilekDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.posilekDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idposilkuDataGridViewTextBoxColumn,
-            this.idklientDataGridViewTextBoxColumn,
-            this.idtypposilkuDataGridViewTextBoxColumn,
-            this.dataposilkuDataGridViewTextBoxColumn,
-            this.idemployeeDataGridViewTextBoxColumn,
-            this.datawprowadzeniaDataGridViewTextBoxColumn});
-            this.posilekDataGridView.DataSource = this.posilekBindingSource;
-            this.posilekDataGridView.Location = new System.Drawing.Point(199, 30);
-            this.posilekDataGridView.Name = "posilekDataGridView";
-            this.posilekDataGridView.Size = new System.Drawing.Size(679, 166);
-            this.posilekDataGridView.TabIndex = 12;
-            this.posilekDataGridView.Visible = false;
-            this.posilekDataGridView.SelectionChanged += new System.EventHandler(this.SelectChanged);
-            // 
-            // idposilkuDataGridViewTextBoxColumn
-            // 
-            this.idposilkuDataGridViewTextBoxColumn.DataPropertyName = "id_posilku";
-            this.idposilkuDataGridViewTextBoxColumn.HeaderText = "id_posilku";
-            this.idposilkuDataGridViewTextBoxColumn.Name = "idposilkuDataGridViewTextBoxColumn";
-            this.idposilkuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idklientDataGridViewTextBoxColumn
-            // 
-            this.idklientDataGridViewTextBoxColumn.DataPropertyName = "id_klient";
-            this.idklientDataGridViewTextBoxColumn.HeaderText = "id_klient";
-            this.idklientDataGridViewTextBoxColumn.Name = "idklientDataGridViewTextBoxColumn";
-            // 
-            // idtypposilkuDataGridViewTextBoxColumn
-            // 
-            this.idtypposilkuDataGridViewTextBoxColumn.DataPropertyName = "id_typ_posilku";
-            this.idtypposilkuDataGridViewTextBoxColumn.HeaderText = "id_typ_posilku";
-            this.idtypposilkuDataGridViewTextBoxColumn.Name = "idtypposilkuDataGridViewTextBoxColumn";
-            // 
-            // dataposilkuDataGridViewTextBoxColumn
-            // 
-            this.dataposilkuDataGridViewTextBoxColumn.DataPropertyName = "data_posilku";
-            this.dataposilkuDataGridViewTextBoxColumn.HeaderText = "data_posilku";
-            this.dataposilkuDataGridViewTextBoxColumn.Name = "dataposilkuDataGridViewTextBoxColumn";
-            // 
-            // idemployeeDataGridViewTextBoxColumn
-            // 
-            this.idemployeeDataGridViewTextBoxColumn.DataPropertyName = "id_employee";
-            this.idemployeeDataGridViewTextBoxColumn.HeaderText = "id_employee";
-            this.idemployeeDataGridViewTextBoxColumn.Name = "idemployeeDataGridViewTextBoxColumn";
-            // 
-            // datawprowadzeniaDataGridViewTextBoxColumn
-            // 
-            this.datawprowadzeniaDataGridViewTextBoxColumn.DataPropertyName = "data_wprowadzenia";
-            this.datawprowadzeniaDataGridViewTextBoxColumn.HeaderText = "data_wprowadzenia";
-            this.datawprowadzeniaDataGridViewTextBoxColumn.Name = "datawprowadzeniaDataGridViewTextBoxColumn";
-            // 
             // posilekBindingSource
             // 
             this.posilekBindingSource.DataMember = "FK_id_klient";
@@ -1039,10 +972,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 461);
+            this.Controls.Add(this.ProductPanel);
             this.Controls.Add(this.PermissionLabel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
             this.Controls.Add(this.LogoutButton);
+            this.Controls.Add(this.UsersPanel);
             this.Controls.Add(this.CustomerPanel);
             this.Controls.Add(this.PeaopleButton);
             this.Controls.Add(this.CustomersButton);
@@ -1066,7 +1001,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.posilekDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingNavigator)).EndInit();
             this.klienciBindingNavigator.ResumeLayout(false);
@@ -1112,7 +1046,6 @@
         private System.Windows.Forms.TextBox wzrostTextBox;
         private DataSet1TableAdapters.PosilekTableAdapter posilekTableAdapter;
         private System.Windows.Forms.BindingSource posilekBindingSource;
-        private System.Windows.Forms.DataGridView posilekDataGridView;
         private DataSet1TableAdapters.ProduktyTableAdapter produktyTableAdapter;
         private System.Windows.Forms.BindingSource produktyBindingSource;
         private DataSet1TableAdapters.Posilek_produktyTableAdapter posilek_produktyTableAdapter;
@@ -1164,12 +1097,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
         private System.Windows.Forms.DataGridView ClientMealsDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idposilkuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idklientDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idtypposilkuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataposilkuDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idemployeeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datawprowadzeniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button RemoveMealButton;
         private System.Windows.Forms.Button AddMealButton;
         private System.Windows.Forms.DateTimePicker MealDatePicker;

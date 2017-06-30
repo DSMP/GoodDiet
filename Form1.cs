@@ -25,6 +25,7 @@ namespace DobraDietaApp
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
         public LoginForm LoginForm { get; internal set; }
+        public int UserId { get; internal set; }
 
         public Form1()
         {
@@ -131,7 +132,7 @@ namespace DobraDietaApp
             }
         }
 
-        private void ClearProductsOfMeals(object sender, EventArgs e)
+        private void ClearProductsOfMeals(object sender, EventArgs e) // next client id
         {
             MealsProductsDataGridView.DataSource = from produkt in db.Produkties
                                                    where produkt.id_produkty < 1
@@ -298,11 +299,44 @@ namespace DobraDietaApp
             {
                 this.typ_posilkuTableAdapter.FillBy(this.dataSet1.typ_posilku);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void AddMealButton_Click(object sender, EventArgs e)
+        {
+            db.Posileks.InsertOnSubmit(new Posilek { data_posilku = MealDatePicker.Value, data_wprowadzenia = DateTime.Now,
+                id_employee = UserId, id_klient = Convert.ToInt32(id_klientTextBox.Text), id_typ_posilku = TypeOfMealsComboBox.SelectedIndex+1 });
+            ClientMealsDataGrid.DataSource = ClientMealsBindingSource;
+            db.SubmitChanges();
+            ClearProductsOfMeals(sender, e);
+        }
+
+        private void RemoveMealButton_Click(object sender, EventArgs e)
+        {
+            int SelectedMeal = ClientMealsDataGrid.CurrentCell.RowIndex;
+            int idOfMeal = (int)ClientMealsDataGrid.Rows[SelectedMeal].Cells[0].Value;
+            var queryProd_Meals = from prod_Meal in db.Posilek_produkties
+                                  where prod_Meal.id_posilku == idOfMeal
+                                  select prod_Meal;
+            foreach (var item2 in queryProd_Meals.ToList())
+            {
+                string insertStatement = "Delete From Posilek_produkty where id_posilku = " + item2.id_posilku;
+                db.ExecuteQuery<Posilek_produkty>(insertStatement);
+            }
+            try
+            {
+                string insertStatement = "Delete From Posilek where id_posilku = " + idOfMeal;
+                db.ExecuteQuery<Posilek_produkty>(insertStatement);
+                ClearProductsOfMeals(sender, e);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("First choose Product of Meal Then press to Removed");
+            }
         }
     }
 }

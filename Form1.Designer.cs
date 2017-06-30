@@ -41,10 +41,10 @@
             this.CustomersButton = new System.Windows.Forms.Button();
             this.PeaopleButton = new System.Windows.Forms.Button();
             this.CustomerPanel = new System.Windows.Forms.Panel();
-            this.TypeOfMeals = new System.Windows.Forms.ComboBox();
+            this.TypeOfMealsComboBox = new System.Windows.Forms.ComboBox();
             this.typposilkuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new DobraDietaApp.DataSet1();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.MealDatePicker = new System.Windows.Forms.DateTimePicker();
             this.RemoveMealButton = new System.Windows.Forms.Button();
             this.AddMealButton = new System.Windows.Forms.Button();
             this.ClientMealsDataGrid = new System.Windows.Forms.DataGridView();
@@ -132,8 +132,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fKidposilekBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.typ_posilkuTableAdapter = new DobraDietaApp.DataSet1TableAdapters.typ_posilkuTableAdapter();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             id_klientLabel = new System.Windows.Forms.Label();
             imieLabel = new System.Windows.Forms.Label();
             nazwiskoLabel = new System.Windows.Forms.Label();
@@ -160,7 +158,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.posilek_produktyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidproduktuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidposilekBindingSource)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // id_klientLabel
@@ -258,8 +255,8 @@
             // 
             // CustomerPanel
             // 
-            this.CustomerPanel.Controls.Add(this.TypeOfMeals);
-            this.CustomerPanel.Controls.Add(this.dateTimePicker1);
+            this.CustomerPanel.Controls.Add(this.TypeOfMealsComboBox);
+            this.CustomerPanel.Controls.Add(this.MealDatePicker);
             this.CustomerPanel.Controls.Add(this.RemoveMealButton);
             this.CustomerPanel.Controls.Add(this.AddMealButton);
             this.CustomerPanel.Controls.Add(this.ClientMealsDataGrid);
@@ -286,17 +283,17 @@
             this.CustomerPanel.Size = new System.Drawing.Size(1315, 770);
             this.CustomerPanel.TabIndex = 4;
             // 
-            // TypeOfMeals
+            // TypeOfMealsComboBox
             // 
-            this.TypeOfMeals.DataSource = this.typposilkuBindingSource;
-            this.TypeOfMeals.DisplayMember = "name";
-            this.TypeOfMeals.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TypeOfMeals.FormattingEnabled = true;
-            this.TypeOfMeals.Location = new System.Drawing.Point(48, 74);
-            this.TypeOfMeals.Name = "TypeOfMeals";
-            this.TypeOfMeals.Size = new System.Drawing.Size(100, 21);
-            this.TypeOfMeals.TabIndex = 21;
-            this.TypeOfMeals.ValueMember = "name";
+            this.TypeOfMealsComboBox.DataSource = this.typposilkuBindingSource;
+            this.TypeOfMealsComboBox.DisplayMember = "name";
+            this.TypeOfMealsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TypeOfMealsComboBox.FormattingEnabled = true;
+            this.TypeOfMealsComboBox.Location = new System.Drawing.Point(48, 74);
+            this.TypeOfMealsComboBox.Name = "TypeOfMealsComboBox";
+            this.TypeOfMealsComboBox.Size = new System.Drawing.Size(100, 21);
+            this.TypeOfMealsComboBox.TabIndex = 21;
+            this.TypeOfMealsComboBox.ValueMember = "id_typ_posilku";
             // 
             // typposilkuBindingSource
             // 
@@ -308,12 +305,12 @@
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dateTimePicker1
+            // MealDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(15, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(190, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.MealDatePicker.Location = new System.Drawing.Point(15, 47);
+            this.MealDatePicker.Name = "MealDatePicker";
+            this.MealDatePicker.Size = new System.Drawing.Size(190, 20);
+            this.MealDatePicker.TabIndex = 20;
             // 
             // RemoveMealButton
             // 
@@ -323,6 +320,7 @@
             this.RemoveMealButton.TabIndex = 19;
             this.RemoveMealButton.Text = "Remove Meal";
             this.RemoveMealButton.UseVisualStyleBackColor = true;
+            this.RemoveMealButton.Click += new System.EventHandler(this.RemoveMealButton_Click);
             // 
             // AddMealButton
             // 
@@ -332,6 +330,7 @@
             this.AddMealButton.TabIndex = 18;
             this.AddMealButton.Text = "Add Meal";
             this.AddMealButton.UseVisualStyleBackColor = true;
+            this.AddMealButton.Click += new System.EventHandler(this.AddMealButton_Click);
             // 
             // ClientMealsDataGrid
             // 
@@ -888,7 +887,7 @@
             this.klienciBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.klienciBindingNavigator.Name = "klienciBindingNavigator";
             this.klienciBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.klienciBindingNavigator.Size = new System.Drawing.Size(1327, 25);
+            this.klienciBindingNavigator.Size = new System.Drawing.Size(916, 25);
             this.klienciBindingNavigator.TabIndex = 7;
             this.klienciBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -1035,30 +1034,11 @@
             // 
             this.typ_posilkuTableAdapter.ClearBeforeFill = true;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(1327, 25);
-            this.fillByToolStrip.TabIndex = 10;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 843);
-            this.Controls.Add(this.fillByToolStrip);
+            this.ClientSize = new System.Drawing.Size(916, 461);
             this.Controls.Add(this.PermissionLabel);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.klienciBindingNavigator);
@@ -1094,8 +1074,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.posilek_produktyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidproduktuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fKidposilekBindingSource)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1194,13 +1172,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datawprowadzeniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button RemoveMealButton;
         private System.Windows.Forms.Button AddMealButton;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox TypeOfMeals;
+        private System.Windows.Forms.DateTimePicker MealDatePicker;
+        private System.Windows.Forms.ComboBox TypeOfMealsComboBox;
         private System.Windows.Forms.BindingSource fKidposilekBindingSource;
         private System.Windows.Forms.BindingSource typposilkuBindingSource;
         private DataSet1TableAdapters.typ_posilkuTableAdapter typ_posilkuTableAdapter;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }
 

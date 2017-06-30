@@ -35,10 +35,11 @@ namespace DobraDietaApp
                     var userLogged = from employee in db.Employees
                     where (employee.login == LoginText.Text) &&
                         (employee.password == Sha256encrypt(PasswordText.Text))
-                    select new { Login = employee.login };
+                    select new { UserID = employee.id_employee, Login = employee.login };
                     if (userLogged.FirstOrDefault() != null)
                     {
                         Form1 MainWindow = new Form1();
+                        MainWindow.UserId = userLogged.First().UserID;
                         MainWindow.UserLogin = LoginText.Text;
                         MainWindow.Role = (from role in db.Roles
                                           where role.id_role == (from empl_role in db.pracownik_rolas

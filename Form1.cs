@@ -82,15 +82,15 @@ namespace DobraDietaApp
             // TODO: This line of code loads data into the 'dataSet1.Produkty' table. You can move, or remove it, as needed.
             this.produktyTableAdapter.Fill(this.dataSet1.Produkty);
             // TODO: This line of code loads data into the 'dataSet1.Posilek' table. You can move, or remove it, as needed.
-           // this.posilekTableAdapter.Fill(this.dataSet1.Posilek);
+            // this.posilekTableAdapter.Fill(this.dataSet1.Posilek);
             // TODO: This line of code loads data into the 'dataSet1.Klienci' table. You can move, or remove it, as needed.
             this.klienciTableAdapter.Fill(this.dataSet1.Klienci);
             // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
             //this.employeesTableAdapter.Fill(this.dataSet1.Employees);
             // TODO: This line of code loads data into the 'dataSet1.Employees' table. You can move, or remove it, as needed.
             //this.employeesTableAdapter.Fill(this.dataSet1.Employees);
-            
-        }        
+
+        }
 
         private void klienciBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -128,7 +128,7 @@ namespace DobraDietaApp
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -140,12 +140,18 @@ namespace DobraDietaApp
 
             var fillMealTable = from meal in db.Posileks
                                 where meal.id_klient == Convert.ToInt32(id_klientTextBox.Text)
-                                select new { meal.id_posilku, meal.data_posilku, TypeOfMeal = (from mealType in db.typ_posilkus
-                                                                                              where mealType.id_typ_posilku == meal.id_typ_posilku
-                                                                                              select new { mealType.name }).First().name, EmployeeName = (from employee in db.Employees
-                                                                                                                                      where employee.id_employee == meal.id_employee
-                                                                                                                                      select new { employee.name }).First().name,
-                                    meal.data_wprowadzenia };
+                                select new
+                                {
+                                    meal.id_posilku,
+                                    meal.data_posilku,
+                                    TypeOfMeal = (from mealType in db.typ_posilkus
+                                                  where mealType.id_typ_posilku == meal.id_typ_posilku
+                                                  select new { mealType.name }).First().name,
+                                    EmployeeName = (from employee in db.Employees
+                                                    where employee.id_employee == meal.id_employee
+                                                    select new { employee.name }).First().name,
+                                    meal.data_wprowadzenia
+                                };
             ClientMealsBindingSource.DataSource = fillMealTable;
             ClientMealsDataGrid.DataSource = ClientMealsBindingSource;
         }
@@ -154,8 +160,8 @@ namespace DobraDietaApp
         {
             String productSelected = ProductsList.SelectedValue.ToString();
             var productRow = from product in db.Produkties
-                        where product.nazwa == productSelected
-                        select new { IdProduct = product.id_produkty };
+                             where product.nazwa == productSelected
+                             select new { IdProduct = product.id_produkty };
             var mealRow = from meal in db.Posileks
                           where meal.id_posilku == idOfMeal
                           select new { IdMeal = meal.id_posilku };
@@ -165,7 +171,7 @@ namespace DobraDietaApp
                 string insertStatement = "Insert into Posilek_produkty values(" + mealRow.FirstOrDefault().IdMeal + ", " +
                         productRow.FirstOrDefault().IdProduct + ")";
                 db.ExecuteQuery<Posilek_produkty>(insertStatement);
-                SelectChanged(sender,e);
+                SelectChanged(sender, e);
             }
             catch (Exception)
             {
@@ -247,7 +253,7 @@ namespace DobraDietaApp
             employeesTableAdapter.Fill(this.dataSet1.Employees);
             try
             {
-                string insertStatement = "insert into pracownik_rola values (" + db.Employees.ToList().Last().id_employee + "," + (AdminCheckBox.Checked? 1 : 2) + ")";
+                string insertStatement = "insert into pracownik_rola values (" + db.Employees.ToList().Last().id_employee + "," + (AdminCheckBox.Checked ? 1 : 2) + ")";
                 db.ExecuteQuery<pracownik_rola>(insertStatement);
             }
             catch (Exception ex)
@@ -276,7 +282,7 @@ namespace DobraDietaApp
             catch (Exception)
             {
             }
-            
+
         }
 
         private void LogoutButton_Click(object sender, EventArgs e)
@@ -308,8 +314,15 @@ namespace DobraDietaApp
 
         private void AddMealButton_Click(object sender, EventArgs e)
         {
-            db.Posileks.InsertOnSubmit(new Posilek { data_posilku = MealDatePicker.Value, data_wprowadzenia = DateTime.Now,
-                id_employee = UserId, id_klient = Convert.ToInt32(id_klientTextBox.Text), id_typ_posilku = TypeOfMealsComboBox.SelectedIndex+1 });
+            if (MealDatePicker.Value <= DateTime.Now) return;
+            db.Posileks.InsertOnSubmit(new Posilek
+            {
+                data_posilku = MealDatePicker.Value,
+                data_wprowadzenia = DateTime.Now,
+                id_employee = UserId,
+                id_klient = Convert.ToInt32(id_klientTextBox.Text),
+                id_typ_posilku = TypeOfMealsComboBox.SelectedIndex + 1
+            });
             ClientMealsDataGrid.DataSource = ClientMealsBindingSource;
             db.SubmitChanges();
             ClearProductsOfMeals(sender, e);

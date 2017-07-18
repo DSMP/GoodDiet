@@ -43,5 +43,16 @@ namespace DobraDietaApp.Properties {
                 return ((string)(this["GoodDietDbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-69UK86F\\SQLEXPRESS;Initial Catalog=GoodDietDb;Persist Securit" +
+            "y Info=True;User ID=GoodDietUser")]
+        public string GoodDietDbConnectionString1 {
+            get {
+                return ((string)(this["GoodDietDbConnectionString1"]));
+            }
+        }
     }
 }

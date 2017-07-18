@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GoodDietDb" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-69UK86F\SQLEXPRESS;Initial Catalog=GoodDietDb;Persist Security Info=True;User ID=GoodDietUser" SettingsObjectName="DobraDietaApp.Properties.Settings" SettingsPropertyName="GoodDietDbConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="id_customer" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="surname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="height" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Customer_Meal" Member="Meals" ThisKey="id_customer" OtherKey="id_customer" Type="Meal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roles" Member="Roles">
+    <Type Name="Role">
+      <Column Name="id_role" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Role_Employees_Role" Member="Employee_Roles" ThisKey="id_role" OtherKey="id_role" Type="Employee_Role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="id_employee" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="login" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="surname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Binary(1)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Employee_Employees_Role" Member="Employee_Roles" ThisKey="id_employee" OtherKey="id_employee" Type="Employee_Role" />
+      <Association Name="Employee_Meal" Member="Meals" ThisKey="id_employee" OtherKey="id_employee" Type="Meal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employees_Roles" Member="Employee_Roles">
+    <Type Name="Employee_Role">
+      <Column Name="id_employee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_Employees_Role" Member="Employee" ThisKey="id_employee" OtherKey="id_employee" Type="Employee" IsForeignKey="true" />
+      <Association Name="Role_Employees_Role" Member="Role" ThisKey="id_role" OtherKey="id_role" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Meal_type" Member="Meal_types">
+    <Type Name="Meal_type">
+      <Column Name="id_meal_type" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Meal_type_Meal" Member="Meals" ThisKey="id_meal_type" OtherKey="id_meal_type" Type="Meal" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Meals" Member="Meals">
+    <Type Name="Meal">
+      <Column Name="id_meal" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_customer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_meal_type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="meal_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="id_employee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_inserted" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Meal_Meals_product" Member="Meal_products" ThisKey="id_meal" OtherKey="id_meal" Type="Meal_product" />
+      <Association Name="Customer_Meal" Member="Customer" ThisKey="id_customer" OtherKey="id_customer" Type="Customer" IsForeignKey="true" />
+      <Association Name="Employee_Meal" Member="Employee" ThisKey="id_employee" OtherKey="id_employee" Type="Employee" IsForeignKey="true" />
+      <Association Name="Meal_type_Meal" Member="Meal_type" ThisKey="id_meal_type" OtherKey="id_meal_type" Type="Meal_type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Meals_products" Member="Meal_products">
+    <Type Name="Meal_product">
+      <Column Name="id_meal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Meal_Meals_product" Member="Meal" ThisKey="id_meal" OtherKey="id_meal" Type="Meal" IsForeignKey="true" />
+      <Association Name="Product_Meals_product" Member="Product" ThisKey="id_product" OtherKey="id_product" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="weight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="home_measure" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="cal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="protein" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="fats" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="carbo_hydrates" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Product_Meals_product" Member="Meal_products" ThisKey="id_product" OtherKey="id_product" Type="Meal_product" />
+    </Type>
+  </Table>
+</Database>

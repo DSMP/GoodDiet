@@ -13,7 +13,7 @@ namespace DobraDietaApp
 {
     public partial class Form1 : Form
     {
-        DataClasses1DataContext db;
+        DataClassesDataContext db;
         DataSet1 dt;
         int idOfMeal = 0;
         List<int> productsRowsRemoved;
@@ -31,7 +31,7 @@ namespace DobraDietaApp
         {
             this.FormClosing += Application_ApplicationExit;
             InitializeComponent();
-            db = new DataClasses1DataContext();
+            db = new DataClassesDataContext();
             dt = new DataSet1();
             productsRowsRemoved = new List<int>();
             panels = new List<Panel>();

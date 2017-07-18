@@ -18,3 +18,13 @@ D:\Documents\Visual Studio 2015\GitProjects\DobraDietaApp\obj\Debug\DobraDietaAp
 D:\Documents\Visual Studio 2015\GitProjects\DobraDietaApp\obj\Debug\DobraDietaApp.Properties.Resources.resources
 D:\Documents\Visual Studio 2015\GitProjects\DobraDietaApp\obj\Debug\DobraDietaApp.csproj.GenerateResource.Cache
 D:\Documents\Visual Studio 2015\GitProjects\DobraDietaApp\obj\Debug\DobraDietaApp.csprojResolveAssemblyReference.cache
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\bin\Debug\DobraDietaApp.exe.config
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\bin\Debug\DobraDietaApp.exe
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\bin\Debug\DobraDietaApp.pdb
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.csprojResolveAssemblyReference.cache
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Form1.resources
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.LoginForm.resources
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Properties.Resources.resources
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.csproj.GenerateResource.Cache
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.exe
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.pdb

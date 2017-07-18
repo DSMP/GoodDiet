@@ -49,19 +49,19 @@
             this.AddMealButton = new System.Windows.Forms.Button();
             this.ClientMealsDataGrid = new System.Windows.Forms.DataGridView();
             this.button6 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.ProductsList = new System.Windows.Forms.ComboBox();
+            this.produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MealsProductsDataGridView = new System.Windows.Forms.DataGridView();
+            this.id_klientTextBox = new System.Windows.Forms.TextBox();
+            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.imieTextBox = new System.Windows.Forms.TextBox();
+            this.nazwiskoTextBox = new System.Windows.Forms.TextBox();
+            this.wiekTextBox = new System.Windows.Forms.TextBox();
+            this.wagaTextBox = new System.Windows.Forms.TextBox();
+            this.wzrostTextBox = new System.Windows.Forms.TextBox();
             this.UsersPanel = new System.Windows.Forms.Panel();
             this.FileDirectoryLabel = new System.Windows.Forms.Label();
-            this.ProductPanel = new System.Windows.Forms.Panel();
-            this.produktyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produktyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.OpenPhotoButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,7 +79,6 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.klienciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,16 +87,17 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.ProductsList = new System.Windows.Forms.ComboBox();
-            this.MealsProductsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProductPanel = new System.Windows.Forms.Panel();
+            this.produktyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.posilekBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.id_klientTextBox = new System.Windows.Forms.TextBox();
-            this.imieTextBox = new System.Windows.Forms.TextBox();
-            this.nazwiskoTextBox = new System.Windows.Forms.TextBox();
-            this.wiekTextBox = new System.Windows.Forms.TextBox();
-            this.wagaTextBox = new System.Windows.Forms.TextBox();
-            this.wzrostTextBox = new System.Windows.Forms.TextBox();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.klienciTableAdapter = new DobraDietaApp.DataSet1TableAdapters.KlienciTableAdapter();
             this.tableAdapterManager = new DobraDietaApp.DataSet1TableAdapters.TableAdapterManager();
@@ -135,15 +135,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.typposilkuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientMealsDataGrid)).BeginInit();
-            this.UsersPanel.SuspendLayout();
-            this.ProductPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).BeginInit();
+            this.UsersPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).BeginInit();
+            this.ProductPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingNavigator)).BeginInit();
             this.klienciBindingNavigator.SuspendLayout();
@@ -341,6 +341,98 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.RemoveProductFromMeal_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(15, 305);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(185, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Add product to meal\r\n";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.AddProductToMeal_Click);
+            // 
+            // ProductsList
+            // 
+            this.ProductsList.DataSource = this.produktyBindingSource;
+            this.ProductsList.DisplayMember = "nazwa";
+            this.ProductsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ProductsList.FormattingEnabled = true;
+            this.ProductsList.Location = new System.Drawing.Point(15, 277);
+            this.ProductsList.Name = "ProductsList";
+            this.ProductsList.Size = new System.Drawing.Size(185, 21);
+            this.ProductsList.TabIndex = 14;
+            this.ProductsList.ValueMember = "nazwa";
+            // 
+            // produktyBindingSource
+            // 
+            this.produktyBindingSource.DataMember = "Produkty";
+            this.produktyBindingSource.DataSource = this.dataSet1;
+            // 
+            // MealsProductsDataGridView
+            // 
+            this.MealsProductsDataGridView.AllowUserToAddRows = false;
+            this.MealsProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MealsProductsDataGridView.Location = new System.Drawing.Point(211, 203);
+            this.MealsProductsDataGridView.Name = "MealsProductsDataGridView";
+            this.MealsProductsDataGridView.ReadOnly = true;
+            this.MealsProductsDataGridView.Size = new System.Drawing.Size(679, 179);
+            this.MealsProductsDataGridView.TabIndex = 13;
+            this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
+            // 
+            // id_klientTextBox
+            // 
+            this.id_klientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "id_klient", true));
+            this.id_klientTextBox.Enabled = false;
+            this.id_klientTextBox.Location = new System.Drawing.Point(84, 104);
+            this.id_klientTextBox.Name = "id_klientTextBox";
+            this.id_klientTextBox.Size = new System.Drawing.Size(100, 20);
+            this.id_klientTextBox.TabIndex = 1;
+            // 
+            // klienciBindingSource
+            // 
+            this.klienciBindingSource.DataMember = "Klienci";
+            this.klienciBindingSource.DataSource = this.dataSet1;
+            // 
+            // imieTextBox
+            // 
+            this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "imie", true));
+            this.imieTextBox.Location = new System.Drawing.Point(84, 130);
+            this.imieTextBox.Name = "imieTextBox";
+            this.imieTextBox.Size = new System.Drawing.Size(100, 20);
+            this.imieTextBox.TabIndex = 3;
+            // 
+            // nazwiskoTextBox
+            // 
+            this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "nazwisko", true));
+            this.nazwiskoTextBox.Location = new System.Drawing.Point(84, 156);
+            this.nazwiskoTextBox.Name = "nazwiskoTextBox";
+            this.nazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nazwiskoTextBox.TabIndex = 5;
+            // 
+            // wiekTextBox
+            // 
+            this.wiekTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wiek", true));
+            this.wiekTextBox.Location = new System.Drawing.Point(84, 182);
+            this.wiekTextBox.Name = "wiekTextBox";
+            this.wiekTextBox.Size = new System.Drawing.Size(100, 20);
+            this.wiekTextBox.TabIndex = 7;
+            // 
+            // wagaTextBox
+            // 
+            this.wagaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "waga", true));
+            this.wagaTextBox.Location = new System.Drawing.Point(84, 208);
+            this.wagaTextBox.Name = "wagaTextBox";
+            this.wagaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.wagaTextBox.TabIndex = 9;
+            // 
+            // wzrostTextBox
+            // 
+            this.wzrostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wzrost", true));
+            this.wzrostTextBox.Location = new System.Drawing.Point(84, 234);
+            this.wzrostTextBox.Name = "wzrostTextBox";
+            this.wzrostTextBox.Size = new System.Drawing.Size(100, 20);
+            this.wzrostTextBox.TabIndex = 11;
+            // 
             // UsersPanel
             // 
             this.UsersPanel.Controls.Add(this.FileDirectoryLabel);
@@ -370,87 +462,6 @@
             this.FileDirectoryLabel.Size = new System.Drawing.Size(66, 13);
             this.FileDirectoryLabel.TabIndex = 13;
             this.FileDirectoryLabel.Text = "File directory";
-            // 
-            // ProductPanel
-            // 
-            this.ProductPanel.Controls.Add(this.produktyDataGridView);
-            this.ProductPanel.Location = new System.Drawing.Point(12, 73);
-            this.ProductPanel.Name = "ProductPanel";
-            this.ProductPanel.Size = new System.Drawing.Size(910, 489);
-            this.ProductPanel.TabIndex = 11;
-            // 
-            // produktyDataGridView
-            // 
-            this.produktyDataGridView.AutoGenerateColumns = false;
-            this.produktyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.produktyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25});
-            this.produktyDataGridView.DataSource = this.produktyBindingSource;
-            this.produktyDataGridView.Location = new System.Drawing.Point(3, 7);
-            this.produktyDataGridView.Name = "produktyDataGridView";
-            this.produktyDataGridView.Size = new System.Drawing.Size(895, 470);
-            this.produktyDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "id_produkty";
-            this.dataGridViewTextBoxColumn18.HeaderText = "id_produkty";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "nazwa";
-            this.dataGridViewTextBoxColumn19.HeaderText = "nazwa";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "ilosc";
-            this.dataGridViewTextBoxColumn20.HeaderText = "ilosc";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "miara_domowa";
-            this.dataGridViewTextBoxColumn21.HeaderText = "miara_domowa";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "energia";
-            this.dataGridViewTextBoxColumn22.HeaderText = "energia";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "bialko";
-            this.dataGridViewTextBoxColumn23.HeaderText = "bialko";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "tlusz";
-            this.dataGridViewTextBoxColumn24.HeaderText = "tlusz";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "weglowodany";
-            this.dataGridViewTextBoxColumn25.HeaderText = "weglowodany";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            // 
-            // produktyBindingSource
-            // 
-            this.produktyBindingSource.DataMember = "Produkty";
-            this.produktyBindingSource.DataSource = this.dataSet1;
             // 
             // OpenPhotoButton
             // 
@@ -594,11 +605,6 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Height";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             // 
-            // klienciBindingSource
-            // 
-            this.klienciBindingSource.DataMember = "Klienci";
-            this.klienciBindingSource.DataSource = this.dataSet1;
-            // 
             // employeesDataGridView
             // 
             this.employeesDataGridView.AllowUserToAddRows = false;
@@ -668,92 +674,86 @@
             this.employeesBindingSource.DataMember = "Employees";
             this.employeesBindingSource.DataSource = this.dataSet1;
             // 
-            // button3
+            // ProductPanel
             // 
-            this.button3.Location = new System.Drawing.Point(15, 305);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(185, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Add product to meal\r\n";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.AddProductToMeal_Click);
+            this.ProductPanel.Controls.Add(this.produktyDataGridView);
+            this.ProductPanel.Location = new System.Drawing.Point(12, 73);
+            this.ProductPanel.Name = "ProductPanel";
+            this.ProductPanel.Size = new System.Drawing.Size(910, 489);
+            this.ProductPanel.TabIndex = 11;
             // 
-            // ProductsList
+            // produktyDataGridView
             // 
-            this.ProductsList.DataSource = this.produktyBindingSource;
-            this.ProductsList.DisplayMember = "nazwa";
-            this.ProductsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ProductsList.FormattingEnabled = true;
-            this.ProductsList.Location = new System.Drawing.Point(15, 277);
-            this.ProductsList.Name = "ProductsList";
-            this.ProductsList.Size = new System.Drawing.Size(185, 21);
-            this.ProductsList.TabIndex = 14;
-            this.ProductsList.ValueMember = "nazwa";
+            this.produktyDataGridView.AutoGenerateColumns = false;
+            this.produktyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.produktyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25});
+            this.produktyDataGridView.DataSource = this.produktyBindingSource;
+            this.produktyDataGridView.Location = new System.Drawing.Point(3, 7);
+            this.produktyDataGridView.Name = "produktyDataGridView";
+            this.produktyDataGridView.Size = new System.Drawing.Size(895, 470);
+            this.produktyDataGridView.TabIndex = 0;
             // 
-            // MealsProductsDataGridView
+            // dataGridViewTextBoxColumn18
             // 
-            this.MealsProductsDataGridView.AllowUserToAddRows = false;
-            this.MealsProductsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MealsProductsDataGridView.Location = new System.Drawing.Point(211, 203);
-            this.MealsProductsDataGridView.Name = "MealsProductsDataGridView";
-            this.MealsProductsDataGridView.ReadOnly = true;
-            this.MealsProductsDataGridView.Size = new System.Drawing.Size(679, 179);
-            this.MealsProductsDataGridView.TabIndex = 13;
-            this.MealsProductsDataGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "id_produkty";
+            this.dataGridViewTextBoxColumn18.HeaderText = "id_produkty";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "nazwa";
+            this.dataGridViewTextBoxColumn19.HeaderText = "nazwa";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "ilosc";
+            this.dataGridViewTextBoxColumn20.HeaderText = "ilosc";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "miara_domowa";
+            this.dataGridViewTextBoxColumn21.HeaderText = "miara_domowa";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "energia";
+            this.dataGridViewTextBoxColumn22.HeaderText = "energia";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "bialko";
+            this.dataGridViewTextBoxColumn23.HeaderText = "bialko";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "tlusz";
+            this.dataGridViewTextBoxColumn24.HeaderText = "tlusz";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "weglowodany";
+            this.dataGridViewTextBoxColumn25.HeaderText = "weglowodany";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             // 
             // posilekBindingSource
             // 
             this.posilekBindingSource.DataMember = "FK_id_klient";
             this.posilekBindingSource.DataSource = this.klienciBindingSource;
-            // 
-            // id_klientTextBox
-            // 
-            this.id_klientTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "id_klient", true));
-            this.id_klientTextBox.Enabled = false;
-            this.id_klientTextBox.Location = new System.Drawing.Point(84, 104);
-            this.id_klientTextBox.Name = "id_klientTextBox";
-            this.id_klientTextBox.Size = new System.Drawing.Size(100, 20);
-            this.id_klientTextBox.TabIndex = 1;
-            // 
-            // imieTextBox
-            // 
-            this.imieTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "imie", true));
-            this.imieTextBox.Location = new System.Drawing.Point(84, 130);
-            this.imieTextBox.Name = "imieTextBox";
-            this.imieTextBox.Size = new System.Drawing.Size(100, 20);
-            this.imieTextBox.TabIndex = 3;
-            // 
-            // nazwiskoTextBox
-            // 
-            this.nazwiskoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "nazwisko", true));
-            this.nazwiskoTextBox.Location = new System.Drawing.Point(84, 156);
-            this.nazwiskoTextBox.Name = "nazwiskoTextBox";
-            this.nazwiskoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nazwiskoTextBox.TabIndex = 5;
-            // 
-            // wiekTextBox
-            // 
-            this.wiekTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wiek", true));
-            this.wiekTextBox.Location = new System.Drawing.Point(84, 182);
-            this.wiekTextBox.Name = "wiekTextBox";
-            this.wiekTextBox.Size = new System.Drawing.Size(100, 20);
-            this.wiekTextBox.TabIndex = 7;
-            // 
-            // wagaTextBox
-            // 
-            this.wagaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "waga", true));
-            this.wagaTextBox.Location = new System.Drawing.Point(84, 208);
-            this.wagaTextBox.Name = "wagaTextBox";
-            this.wagaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.wagaTextBox.TabIndex = 9;
-            // 
-            // wzrostTextBox
-            // 
-            this.wzrostTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klienciBindingSource, "wzrost", true));
-            this.wzrostTextBox.Location = new System.Drawing.Point(84, 234);
-            this.wzrostTextBox.Name = "wzrostTextBox";
-            this.wzrostTextBox.Size = new System.Drawing.Size(100, 20);
-            this.wzrostTextBox.TabIndex = 11;
             // 
             // LogoutButton
             // 
@@ -991,16 +991,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.typposilkuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientMealsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
             this.UsersPanel.ResumeLayout(false);
             this.UsersPanel.PerformLayout();
-            this.ProductPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produktyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.klienciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MealsProductsDataGridView)).EndInit();
+            this.ProductPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.produktyDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posilekBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klienciBindingNavigator)).EndInit();
             this.klienciBindingNavigator.ResumeLayout(false);

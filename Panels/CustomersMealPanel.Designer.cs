@@ -65,7 +65,9 @@
             this.MealTypeComboBox = new System.Windows.Forms.ComboBox();
             this.ProductComboBox = new System.Windows.Forms.ComboBox();
             this.AddProductButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.RemoveProductButton = new System.Windows.Forms.Button();
+            this.CustomerMealsGridView = new System.Windows.Forms.DataGridView();
+            this.MealProductsGridView = new System.Windows.Forms.DataGridView();
             id_customerLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
@@ -76,6 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
             this.customersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerMealsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MealProductsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // id_customerLabel
@@ -383,20 +387,38 @@
             this.AddProductButton.Text = "Add Product to Meal";
             this.AddProductButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // RemoveProductButton
             // 
-            this.button4.Location = new System.Drawing.Point(45, 433);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(187, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Remove Product from Meal";
-            this.button4.UseVisualStyleBackColor = true;
+            this.RemoveProductButton.Location = new System.Drawing.Point(45, 433);
+            this.RemoveProductButton.Name = "RemoveProductButton";
+            this.RemoveProductButton.Size = new System.Drawing.Size(187, 23);
+            this.RemoveProductButton.TabIndex = 19;
+            this.RemoveProductButton.Text = "Remove Product from Meal";
+            this.RemoveProductButton.UseVisualStyleBackColor = true;
+            // 
+            // CustomerMealsGridView
+            // 
+            this.CustomerMealsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustomerMealsGridView.Location = new System.Drawing.Point(251, 28);
+            this.CustomerMealsGridView.Name = "CustomerMealsGridView";
+            this.CustomerMealsGridView.Size = new System.Drawing.Size(656, 236);
+            this.CustomerMealsGridView.TabIndex = 20;
+            // 
+            // MealProductsGridView
+            // 
+            this.MealProductsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MealProductsGridView.Location = new System.Drawing.Point(251, 274);
+            this.MealProductsGridView.Name = "MealProductsGridView";
+            this.MealProductsGridView.Size = new System.Drawing.Size(655, 225);
+            this.MealProductsGridView.TabIndex = 21;
             // 
             // CustomersMealPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.MealProductsGridView);
+            this.Controls.Add(this.CustomerMealsGridView);
+            this.Controls.Add(this.RemoveProductButton);
             this.Controls.Add(this.AddProductButton);
             this.Controls.Add(this.ProductComboBox);
             this.Controls.Add(this.MealTypeComboBox);
@@ -423,6 +445,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).EndInit();
             this.customersBindingNavigator.ResumeLayout(false);
             this.customersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerMealsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MealProductsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,6 +483,8 @@
         private System.Windows.Forms.ComboBox MealTypeComboBox;
         private System.Windows.Forms.ComboBox ProductComboBox;
         private System.Windows.Forms.Button AddProductButton;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button RemoveProductButton;
+        private System.Windows.Forms.DataGridView CustomerMealsGridView;
+        private System.Windows.Forms.DataGridView MealProductsGridView;
     }
 }

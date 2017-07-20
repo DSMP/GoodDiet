@@ -104,11 +104,11 @@ namespace DobraDietaApp
 			}
 		}
 		
-		public System.Data.Linq.Table<Employee_Role> Employee_Roles
+		public System.Data.Linq.Table<Employees_Role> Employees_Roles
 		{
 			get
 			{
-				return this.GetTable<Employee_Role>();
+				return this.GetTable<Employees_Role>();
 			}
 		}
 		
@@ -128,11 +128,11 @@ namespace DobraDietaApp
 			}
 		}
 		
-		public System.Data.Linq.Table<Meal_product> Meal_products
+		public System.Data.Linq.Table<Meals_product> Meals_products
 		{
 			get
 			{
-				return this.GetTable<Meal_product>();
+				return this.GetTable<Meals_product>();
 			}
 		}
 		
@@ -652,14 +652,14 @@ namespace DobraDietaApp
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Employees_Roles")]
-	public partial class Employee_Role
+	public partial class Employees_Role
 	{
 		
 		private int _id_employee;
 		
 		private int _id_role;
 		
-		public Employee_Role()
+		public Employees_Role()
 		{
 		}
 		
@@ -1116,14 +1116,14 @@ namespace DobraDietaApp
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Meals_products")]
-	public partial class Meal_product
+	public partial class Meals_product
 	{
 		
 		private int _id_meal;
 		
 		private int _id_product;
 		
-		public Meal_product()
+		public Meals_product()
 		{
 		}
 		

@@ -15,7 +15,7 @@
     <Type Name="Role">
       <Column Name="id_role" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Role_Employees_Role" Member="Employee_Roles" ThisKey="id_role" OtherKey="id_role" Type="Employee_Role" />
+      <Association Name="Role_Employees_Role" Member="Employees_Roles" ThisKey="id_role" OtherKey="id_role" Type="Employees_Role" />
     </Type>
   </Table>
   <Table Name="dbo.Employees" Member="Employees">
@@ -26,12 +26,12 @@
       <Column Name="surname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="password" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
       <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Binary(1)" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="Employee_Employees_Role" Member="Employee_Roles" ThisKey="id_employee" OtherKey="id_employee" Type="Employee_Role" />
+      <Association Name="Employee_Employees_Role" Member="Employees_Roles" ThisKey="id_employee" OtherKey="id_employee" Type="Employees_Role" />
       <Association Name="Employee_Meal" Member="Meals" ThisKey="id_employee" OtherKey="id_employee" Type="Meal" />
     </Type>
   </Table>
-  <Table Name="dbo.Employees_Roles" Member="Employee_Roles">
-    <Type Name="Employee_Role">
+  <Table Name="dbo.Employees_Roles" Member="Employees_Roles">
+    <Type Name="Employees_Role">
       <Column Name="id_employee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Employee_Employees_Role" Member="Employee" ThisKey="id_employee" OtherKey="id_employee" Type="Employee" IsForeignKey="true" />
@@ -53,14 +53,14 @@
       <Column Name="meal_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="id_employee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="date_inserted" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Association Name="Meal_Meals_product" Member="Meal_products" ThisKey="id_meal" OtherKey="id_meal" Type="Meal_product" />
+      <Association Name="Meal_Meals_product" Member="Meals_products" ThisKey="id_meal" OtherKey="id_meal" Type="Meals_product" />
       <Association Name="Customer_Meal" Member="Customer" ThisKey="id_customer" OtherKey="id_customer" Type="Customer" IsForeignKey="true" />
       <Association Name="Employee_Meal" Member="Employee" ThisKey="id_employee" OtherKey="id_employee" Type="Employee" IsForeignKey="true" />
       <Association Name="Meal_type_Meal" Member="Meal_type" ThisKey="id_meal_type" OtherKey="id_meal_type" Type="Meal_type" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Meals_products" Member="Meal_products">
-    <Type Name="Meal_product">
+  <Table Name="dbo.Meals_products" Member="Meals_products">
+    <Type Name="Meals_product">
       <Column Name="id_meal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_product" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Meal_Meals_product" Member="Meal" ThisKey="id_meal" OtherKey="id_meal" Type="Meal" IsForeignKey="true" />
@@ -77,7 +77,7 @@
       <Column Name="protein" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="fats" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="carbo_hydrates" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="Product_Meals_product" Member="Meal_products" ThisKey="id_product" OtherKey="id_product" Type="Meal_product" />
+      <Association Name="Product_Meals_product" Member="Meals_products" ThisKey="id_product" OtherKey="id_product" Type="Meals_product" />
     </Type>
   </Table>
 </Database>

@@ -21,7 +21,7 @@
       </nestedChildShapes>
     </classShape>
     <classShape Id="244ff8aa-1177-40af-b0b9-500885da4b6c" absoluteBounds="3.75, 7.5, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/DataClassesDataContext/Employee_Role" />
+      <DataClassMoniker Name="/DataClassesDataContext/Employees_Role" />
       <nestedChildShapes>
         <elementListCompartment Id="fc2210cb-b64d-4c47-91b2-d2c0068ab8c5" absoluteBounds="3.7650000000000006, 7.9600000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
@@ -39,7 +39,7 @@
       </nestedChildShapes>
     </classShape>
     <classShape Id="48e098fd-610c-44f9-a79b-2cfbc82bd267" absoluteBounds="6.625, 4.5, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/DataClassesDataContext/Meal_product" />
+      <DataClassMoniker Name="/DataClassesDataContext/Meals_product" />
       <nestedChildShapes>
         <elementListCompartment Id="27ede43b-1694-4fdf-8ddb-2190d4edd63e" absoluteBounds="6.64, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>

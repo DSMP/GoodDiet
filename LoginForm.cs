@@ -14,12 +14,12 @@ namespace DobraDietaApp
     public partial class LoginForm : Form
     {
        
-        DataClasses1DataContext db;
+        DataClassesDataContext db;
         public LoginForm()
         {
             InitializeComponent();
-            db = new DataClasses1DataContext();
-            var cos = Sha256encrypt("qwe");
+            db = new DataClassesDataContext();
+            var cos = Sha256encrypt("qwerty");
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
@@ -50,8 +50,8 @@ namespace DobraDietaApp
                         MainWindow.UserId = userLogged.First().UserID;
                         MainWindow.UserLogin = LoginText.Text;
                         MainWindow.Role = (from role in db.Roles
-                                          where role.id_role == (from empl_role in db.pracownik_rolas
-                                                                 where empl_role.id_pracownika == (from employee in db.Employees
+                                          where role.id_role == (from empl_role in db.Employees_Roles
+                                                                 where empl_role.id_employee == (from employee in db.Employees
                                                                                                    where employee.login == LoginText.Text
                                                                                                    select new { EmployeeId = employee.id_employee }).First().EmployeeId
                                                                  select new { IdRole = empl_role.id_role }).First().IdRole

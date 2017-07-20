@@ -28,3 +28,5 @@ C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\
 C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.csproj.GenerateResource.Cache
 C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.exe
 C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.pdb
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Panels.CustomersMealPanel.resources
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Panels.ProductsPanel.resources

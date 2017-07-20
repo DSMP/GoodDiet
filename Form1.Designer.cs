@@ -50,8 +50,10 @@
             this.StatsButton = new System.Windows.Forms.Button();
             this.ProductsButton = new System.Windows.Forms.Button();
             this.CustomerMealsButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.PeopleButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.RoleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
@@ -111,7 +113,7 @@
             this.customersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.customersBindingNavigator.Name = "customersBindingNavigator";
             this.customersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.customersBindingNavigator.Size = new System.Drawing.Size(783, 25);
+            this.customersBindingNavigator.Size = new System.Drawing.Size(934, 25);
             this.customersBindingNavigator.TabIndex = 0;
             this.customersBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -213,7 +215,7 @@
             // 
             this.StatsButton.Location = new System.Drawing.Point(12, 42);
             this.StatsButton.Name = "StatsButton";
-            this.StatsButton.Size = new System.Drawing.Size(75, 23);
+            this.StatsButton.Size = new System.Drawing.Size(93, 45);
             this.StatsButton.TabIndex = 1;
             this.StatsButton.Text = "Stats";
             this.StatsButton.UseVisualStyleBackColor = true;
@@ -222,45 +224,65 @@
             // 
             this.ProductsButton.Location = new System.Drawing.Point(111, 42);
             this.ProductsButton.Name = "ProductsButton";
-            this.ProductsButton.Size = new System.Drawing.Size(75, 23);
+            this.ProductsButton.Size = new System.Drawing.Size(94, 45);
             this.ProductsButton.TabIndex = 2;
             this.ProductsButton.Text = "Products";
             this.ProductsButton.UseVisualStyleBackColor = true;
             // 
             // CustomerMealsButton
             // 
-            this.CustomerMealsButton.Location = new System.Drawing.Point(216, 42);
+            this.CustomerMealsButton.Location = new System.Drawing.Point(211, 42);
             this.CustomerMealsButton.Name = "CustomerMealsButton";
-            this.CustomerMealsButton.Size = new System.Drawing.Size(75, 23);
+            this.CustomerMealsButton.Size = new System.Drawing.Size(104, 45);
             this.CustomerMealsButton.TabIndex = 3;
             this.CustomerMealsButton.Text = "Customer Meals";
             this.CustomerMealsButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // PeopleButton
             // 
-            this.button4.Location = new System.Drawing.Point(321, 42);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.PeopleButton.Location = new System.Drawing.Point(321, 42);
+            this.PeopleButton.Name = "PeopleButton";
+            this.PeopleButton.Size = new System.Drawing.Size(103, 45);
+            this.PeopleButton.TabIndex = 4;
+            this.PeopleButton.Text = "People";
+            this.PeopleButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // LogoutButton
             // 
-            this.button5.Location = new System.Drawing.Point(430, 42);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.LogoutButton.Location = new System.Drawing.Point(430, 42);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(96, 45);
+            this.LogoutButton.TabIndex = 5;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.UseVisualStyleBackColor = true;
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Location = new System.Drawing.Point(727, 58);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(33, 13);
+            this.LoginLabel.TabIndex = 6;
+            this.LoginLabel.Text = "Login";
+            // 
+            // RoleLabel
+            // 
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Location = new System.Drawing.Point(827, 58);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(29, 13);
+            this.RoleLabel.TabIndex = 7;
+            this.RoleLabel.Text = "Role";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 517);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.RoleLabel);
+            this.Controls.Add(this.LoginLabel);
+            this.Controls.Add(this.LogoutButton);
+            this.Controls.Add(this.PeopleButton);
             this.Controls.Add(this.CustomerMealsButton);
             this.Controls.Add(this.ProductsButton);
             this.Controls.Add(this.StatsButton);
@@ -300,7 +322,9 @@
         private System.Windows.Forms.Button StatsButton;
         private System.Windows.Forms.Button ProductsButton;
         private System.Windows.Forms.Button CustomerMealsButton;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button PeopleButton;
+        private System.Windows.Forms.Button LogoutButton;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label RoleLabel;
     }
 }

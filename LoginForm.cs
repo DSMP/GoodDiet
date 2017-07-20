@@ -19,7 +19,7 @@ namespace DobraDietaApp
         {
             InitializeComponent();
             db = new DataClassesDataContext();
-            var cos = Sha256encrypt("qwerty");
+            //var cos = Sha256encrypt("qwerty");
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

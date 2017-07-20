@@ -51,7 +51,7 @@ namespace DobraDietaApp
     #endregion
 		
 		public DataClassesDataContext() : 
-				base(global::DobraDietaApp.Properties.Settings.Default.GoodDietDbConnectionString1, mappingSource)
+				base(global::DobraDietaApp.Properties.Settings.Default.GoodDietDbConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

@@ -70,6 +70,8 @@
             this.CustomerMealsGridView = new System.Windows.Forms.DataGridView();
             this.MealProductsGridView = new System.Windows.Forms.DataGridView();
             this.meal_typeTableAdapter = new DobraDietaApp.DataSetTableAdapters.Meal_typeTableAdapter();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new DobraDietaApp.DataSetTableAdapters.ProductsTableAdapter();
             id_customerLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
@@ -83,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mealtypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerMealsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MealProductsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // id_customerLabel
@@ -386,12 +389,15 @@
             // 
             // ProductComboBox
             // 
+            this.ProductComboBox.DataSource = this.productsBindingSource;
+            this.ProductComboBox.DisplayMember = "name";
             this.ProductComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductComboBox.FormattingEnabled = true;
             this.ProductComboBox.Location = new System.Drawing.Point(45, 344);
             this.ProductComboBox.Name = "ProductComboBox";
             this.ProductComboBox.Size = new System.Drawing.Size(187, 21);
             this.ProductComboBox.TabIndex = 17;
+            this.ProductComboBox.ValueMember = "id_product";
             // 
             // AddProductButton
             // 
@@ -431,6 +437,15 @@
             // 
             this.meal_typeTableAdapter.ClearBeforeFill = true;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.dataSet;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // CustomersMealPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mealtypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerMealsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MealProductsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,5 +525,7 @@
         private System.Windows.Forms.DataGridView MealProductsGridView;
         private System.Windows.Forms.BindingSource mealtypeBindingSource;
         private DataSetTableAdapters.Meal_typeTableAdapter meal_typeTableAdapter;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private DataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
     }
 }

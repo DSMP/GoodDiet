@@ -27,6 +27,7 @@ namespace DobraDietaApp.Panels
         {
             customersTableAdapter.Fill(dataSet.Customers);
             meal_typeTableAdapter.Fill(dataSet.Meal_type);
+            productsTableAdapter.Fill(dataSet.Products);
             ClearProductsOfMeals(sender, e);
         }
 

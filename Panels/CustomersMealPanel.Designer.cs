@@ -459,6 +459,7 @@
             this.Controls.Add(this.customersBindingNavigator);
             this.Name = "CustomersMealPanel";
             this.Size = new System.Drawing.Size(927, 519);
+            this.Load += new System.EventHandler(this.CustomersMealPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).EndInit();

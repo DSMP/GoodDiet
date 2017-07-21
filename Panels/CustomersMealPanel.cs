@@ -21,13 +21,12 @@ namespace DobraDietaApp.Panels
             db = new DataClassesDataContext();
             InitializeComponent();
             CustomertMealsBindingSource = new BindingSource();
-            customersTableAdapter.Fill(dataSet.Customers);
-            meal_typeTableAdapter.Fill(dataSet.Meal_type);
-            customersBindingSource.DataSourceChanged += CustomersBindingSource_DataSourceChanged;
         }
 
-        private void CustomersBindingSource_DataSourceChanged(object sender, EventArgs e)
+        private void CustomersMealPanel_Load(object sender, EventArgs e)
         {
+            customersTableAdapter.Fill(dataSet.Customers);
+            meal_typeTableAdapter.Fill(dataSet.Meal_type);
             ClearProductsOfMeals(sender, e);
         }
 
@@ -86,12 +85,12 @@ namespace DobraDietaApp.Panels
                                   select prod_Meal;
             foreach (var item2 in queryProd_Meals.ToList())
             {
-                string insertStatement = "Delete From Posilek_produkty where id_posilku = " + item2.id_meal;
+                string insertStatement = "Delete From Meals_products where id_meal = " + item2.id_meal;
                 db.ExecuteQuery<Meals_product>(insertStatement);
             }
             try
             {
-                string insertStatement = "Delete From Posilek where id_posilku = " + idOfMeal;
+                string insertStatement = "Delete From Meals where id_meal = " + idOfMeal;
                 db.ExecuteQuery<Meals_product>(insertStatement);
                 ClearProductsOfMeals(sender, e);
             }

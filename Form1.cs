@@ -18,7 +18,7 @@ namespace DobraDietaApp
             InitializeComponent();
         }
 
-        public object UserId { get; internal set; }
+        public int UserId { get; internal set; }
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
         public LoginForm LoginForm { get; internal set; }
@@ -54,7 +54,7 @@ namespace DobraDietaApp
         private void CustomerMealsButton_Click(object sender, EventArgs e)
         {
             MainPanel.Controls.Clear();
-            MainPanel.Controls.Add(new Panels.CustomersMealPanel());
+            MainPanel.Controls.Add(new Panels.CustomersMealPanel(this));
         }
 
         private void ProductsButton_Click(object sender, EventArgs e)

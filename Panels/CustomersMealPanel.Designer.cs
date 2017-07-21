@@ -72,6 +72,7 @@
             this.meal_typeTableAdapter = new DobraDietaApp.DataSetTableAdapters.Meal_typeTableAdapter();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new DobraDietaApp.DataSetTableAdapters.ProductsTableAdapter();
+            this.WeightSLabel = new System.Windows.Forms.Label();
             id_customerLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             surnameLabel = new System.Windows.Forms.Label();
@@ -397,7 +398,7 @@
             this.ProductComboBox.Name = "ProductComboBox";
             this.ProductComboBox.Size = new System.Drawing.Size(187, 21);
             this.ProductComboBox.TabIndex = 17;
-            this.ProductComboBox.ValueMember = "id_product";
+            this.ProductComboBox.ValueMember = "name";
             // 
             // AddProductButton
             // 
@@ -407,6 +408,7 @@
             this.AddProductButton.TabIndex = 18;
             this.AddProductButton.Text = "Add Product to Meal";
             this.AddProductButton.UseVisualStyleBackColor = true;
+            this.AddProductButton.Click += new System.EventHandler(this.AddProductToMeal_Click);
             // 
             // RemoveProductButton
             // 
@@ -416,6 +418,7 @@
             this.RemoveProductButton.TabIndex = 19;
             this.RemoveProductButton.Text = "Remove Product from Meal";
             this.RemoveProductButton.UseVisualStyleBackColor = true;
+            this.RemoveProductButton.Click += new System.EventHandler(this.RemoveProductFromMeal_Click);
             // 
             // CustomerMealsGridView
             // 
@@ -424,6 +427,7 @@
             this.CustomerMealsGridView.Name = "CustomerMealsGridView";
             this.CustomerMealsGridView.Size = new System.Drawing.Size(656, 236);
             this.CustomerMealsGridView.TabIndex = 20;
+            this.CustomerMealsGridView.SelectionChanged += new System.EventHandler(this.SelectChanged);
             // 
             // MealProductsGridView
             // 
@@ -432,6 +436,7 @@
             this.MealProductsGridView.Name = "MealProductsGridView";
             this.MealProductsGridView.Size = new System.Drawing.Size(655, 225);
             this.MealProductsGridView.TabIndex = 21;
+            this.MealProductsGridView.SelectionChanged += new System.EventHandler(this.productSelectionChanged);
             // 
             // meal_typeTableAdapter
             // 
@@ -446,10 +451,21 @@
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
+            // WeightSLabel
+            // 
+            this.WeightSLabel.AutoSize = true;
+            this.WeightSLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.WeightSLabel.Location = new System.Drawing.Point(251, 503);
+            this.WeightSLabel.Name = "WeightSLabel";
+            this.WeightSLabel.Size = new System.Drawing.Size(47, 13);
+            this.WeightSLabel.TabIndex = 22;
+            this.WeightSLabel.Text = "Weight: ";
+            // 
             // CustomersMealPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.WeightSLabel);
             this.Controls.Add(this.MealProductsGridView);
             this.Controls.Add(this.CustomerMealsGridView);
             this.Controls.Add(this.RemoveProductButton);
@@ -527,5 +543,6 @@
         private DataSetTableAdapters.Meal_typeTableAdapter meal_typeTableAdapter;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private DataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.Label WeightSLabel;
     }
 }

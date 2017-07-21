@@ -13,6 +13,8 @@ namespace DobraDietaApp.Panels
     public partial class CustomersMealPanel : UserControl
     {
         DataClassesDataContext db;
+        int idOfMeal = 0;
+        private int idOfProduct = 0;
         BindingSource CustomertMealsBindingSource;
         Form1 MainForm;
         public CustomersMealPanel(Form1 mainForm)
@@ -101,30 +103,84 @@ namespace DobraDietaApp.Panels
             }
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void productSelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                this.meal_typeTableAdapter.FillBy(this.dataSet.Meal_type);
+                int Selectedproduct = MealProductsGridView.CurrentCell.RowIndex;
+                idOfProduct = (int)MealProductsGridView.Rows[Selectedproduct].Cells[0].Value;
             }
-            catch (System.Exception ex)
+            catch (Exception)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
+            }
         }
 
-        private void fillToolStripButton_Click(object sender, EventArgs e)
+        private void SelectChanged(object sender, EventArgs e)
         {
             try
             {
-                this.meal_typeTableAdapter.Fill(this.dataSet.Meal_type);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
 
+                int SelectedMeal = CustomerMealsGridView.CurrentCell.RowIndex;
+                idOfMeal = (int)CustomerMealsGridView.Rows[SelectedMeal].Cells[0].Value;
+                var queryProductsID = from productsID in db.Meals_products
+                                      where productsID.id_meal == idOfMeal
+                                      select new { idOfProduct = productsID.id_product };
+                var queryproducts = from product in db.Products
+                                    join idProduct in queryProductsID on product.id_product equals idProduct.idOfProduct
+                                    select product;
+                                
+                MealProductsGridView.DataSource = queryproducts;
+                double temp = 0;
+                for (int i = 0; i < MealProductsGridView.Rows.Count; i++)
+                {
+                    temp += (double)MealProductsGridView.Rows[i].Cells[2].Value;
+                }
+                WeightSLabel.Text = "Weight: " + temp.ToString();
+            }
+            catch (Exception)
+            {
+
+            }
         }
+
+        private void AddProductToMeal_Click(object sender, EventArgs e)
+        {
+            String productSelected = ProductComboBox.SelectedValue.ToString();
+            var productRow = from product in db.Products
+                             where product.name == productSelected
+                             select new { IdProduct = product.id_product};
+            var mealRow = from meal in db.Meals
+                          where meal.id_meal == idOfMeal
+                          select new { IdMeal = meal.id_meal };
+            Meals_product newPosilek = new Meals_product();
+            try
+            {
+                string insertStatement = "Insert into Meals_products values(" + mealRow.FirstOrDefault().IdMeal + ", " +
+                        productRow.FirstOrDefault().IdProduct + ")";
+                db.ExecuteQuery<Meals_product>(insertStatement);
+                SelectChanged(sender, e);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("First save Then choose meal");
+            }
+        }
+
+        private void RemoveProductFromMeal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string insertStatement = "Delete From Meals_products where id_meal = " + idOfMeal + " AND id_product = " + idOfProduct;
+                db.ExecuteQuery<Meals_product>(insertStatement);
+                SelectChanged(sender, e);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("First choose Product of Meal Then press to Removed");
+            }
+        }
+
+
     }
 }

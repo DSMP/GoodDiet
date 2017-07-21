@@ -15,6 +15,7 @@ namespace DobraDietaApp.Panels
         public ProductsPanel()
         {
             InitializeComponent();
+            productsTableAdapter.Fill(dataSet.Products);
         }
 
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)

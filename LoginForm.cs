@@ -58,7 +58,7 @@ namespace DobraDietaApp
                                           select role).First().name;
                         MainWindow.LoginForm = this;
                         MainWindow.Show();
-                        MainWindow.initFields();
+                        MainWindow.InitFields();
                         this.Hide();
                     }
                     else

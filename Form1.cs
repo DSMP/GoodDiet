@@ -14,6 +14,7 @@ namespace DobraDietaApp
     {
         public Form1()
         {
+            this.FormClosing += Application_ApplicationExit;
             InitializeComponent();
         }
 
@@ -21,6 +22,11 @@ namespace DobraDietaApp
         public string UserLogin { get; internal set; }
         public string Role { get; internal set; }
         public LoginForm LoginForm { get; internal set; }
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            this.LoginForm.Close();
+        }
 
         private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -34,14 +40,27 @@ namespace DobraDietaApp
         {
             // TODO: This line of code loads data into the 'dataSet.Customers' table. You can move, or remove it, as needed.
             this.customersTableAdapter.Fill(this.dataSet.Customers);
+            MainPanel.Dock = DockStyle.None;
 
         }
-        public void initFields()
+        public void InitFields()
         {
             LoginLabel.Text = UserLogin;
             RoleLabel.Text = Role;
             PeopleButton.Visible = Role.Equals("ADMIN") ? true : false;
             //RemoveMealButton.Visible = Role.Equals("ADMIN") ? true : false;
+        }
+
+        private void CustomerMealsButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new Panels.CustomersMealPanel());
+        }
+
+        private void ProductsButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new Panels.ProductsPanel());
         }
     }
 }

@@ -299,6 +299,8 @@
             // 
             // employeesDataGridView
             // 
+            this.employeesDataGridView.AllowUserToAddRows = false;
+            this.employeesDataGridView.AllowUserToDeleteRows = false;
             this.employeesDataGridView.AutoGenerateColumns = false;
             this.employeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -309,6 +311,7 @@
             this.employeesDataGridView.DataSource = this.employeesBindingSource;
             this.employeesDataGridView.Location = new System.Drawing.Point(466, 297);
             this.employeesDataGridView.Name = "employeesDataGridView";
+            this.employeesDataGridView.ReadOnly = true;
             this.employeesDataGridView.Size = new System.Drawing.Size(458, 210);
             this.employeesDataGridView.TabIndex = 2;
             // 

@@ -22,6 +22,7 @@ namespace DobraDietaApp.Panels
             db = new DataClassesDataContext();
             InitializeComponent();
             this.customersTableAdapter.Fill(dataSet.Customers);
+            this.employeesTableAdapter.Fill(dataSet.Employees);
         }
 
         private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -102,7 +103,7 @@ namespace DobraDietaApp.Panels
             employeesTableAdapter.Fill(this.dataSet.Employees);
             try
             {
-                string insertStatement = "insert into Employee_roles values (" + db.Employees.ToList().Last().id_employee + "," + (IsAdminCheckBox.Checked ? 1 : 2) + ")";
+                string insertStatement = "insert into Employees_roles values (" + db.Employees.ToList().Last().id_employee + "," + (IsAdminCheckBox.Checked ? 1 : 2) + ")";
                 db.ExecuteQuery<Employees_Role>(insertStatement);
             }
             catch (Exception ex)

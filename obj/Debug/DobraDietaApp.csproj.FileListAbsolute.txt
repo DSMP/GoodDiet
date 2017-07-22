@@ -30,3 +30,4 @@ C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\
 C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.pdb
 C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Panels.CustomersMealPanel.resources
 C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Panels.ProductsPanel.resources
+C:\Users\Damianek\Documents\Visual Studio 2017\GitProjects\DobraDieta\obj\Debug\DobraDietaApp.Panels.PeoplePanel.resources

@@ -63,6 +63,12 @@ namespace DobraDietaApp
             MainPanel.Controls.Add(new Panels.ProductsPanel());
         }
 
+        private void PeopleButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(new Panels.PeoplePanel());
+        }
+
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             this.LoginForm.Show();

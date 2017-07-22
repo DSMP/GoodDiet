@@ -249,6 +249,7 @@
             this.CustomersGridView.Name = "CustomersGridView";
             this.CustomersGridView.Size = new System.Drawing.Size(655, 263);
             this.CustomersGridView.TabIndex = 1;
+            this.CustomersGridView.SelectionChanged += new System.EventHandler(this.CustomersGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 

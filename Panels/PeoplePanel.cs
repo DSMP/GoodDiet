@@ -15,6 +15,7 @@ namespace DobraDietaApp.Panels
     {
         DataClassesDataContext db;
         private byte[] bimage;
+        private int ClientID;
 
         public PeoplePanel()
         {
@@ -32,8 +33,8 @@ namespace DobraDietaApp.Panels
         }
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            int SelectedCustomer = CustomersGridView.CurrentCell.RowIndex;
-            int ClientID = (int)CustomersGridView.Rows[SelectedCustomer].Cells[0].Value;
+            //int SelectedCustomer = CustomersGridView.CurrentCell.RowIndex;
+            //int ClientID = (int)CustomersGridView.Rows[SelectedCustomer].Cells[0].Value;
             var queryMeal = from Meal in db.Meals
                             where Meal.id_customer == ClientID
                             select Meal;
@@ -107,6 +108,19 @@ namespace DobraDietaApp.Panels
             catch (Exception ex)
             {
                 MessageBox.Show("Error Role " + ex.Message);
+            }
+        }
+
+        private void CustomersGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int SelectedCustomer = CustomersGridView.CurrentCell.RowIndex;
+                ClientID = (int)CustomersGridView.Rows[SelectedCustomer].Cells[0].Value;
+            }
+            catch (NullReferenceException)
+            {
+                
             }
         }
     }

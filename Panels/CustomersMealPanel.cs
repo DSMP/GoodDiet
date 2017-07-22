@@ -46,22 +46,25 @@ namespace DobraDietaApp.Panels
                                                    where produkt.id_product < 1
                                                    select produkt;
 
-            var fillMealTable = from meal in db.Meals
-                                where meal.id_customer == Convert.ToInt32(id_customerTextBox.Text)
-                                select new
-                                {
-                                    meal.id_meal,
-                                    meal.meal_date,
-                                    TypeOfMeal = (from mealType in db.Meal_types
-                                                  where mealType.id_meal_type == meal.id_meal_type
-                                                  select new { mealType.name }).First().name,
-                                    EmployeeName = (from employee in db.Employees
-                                                    where employee.id_employee == meal.id_employee
-                                                    select new { employee.name }).First().name,
-                                    meal.date_inserted
-                                };
-            CustomertMealsBindingSource.DataSource = fillMealTable;
-            CustomerMealsGridView.DataSource = CustomertMealsBindingSource;
+            if (db.Meals.Count() > 0)
+            {
+                var fillMealTable = from meal in db.Meals
+                                    where meal.id_customer == Convert.ToInt32(id_customerTextBox.Text)
+                                    select new
+                                    {
+                                        meal.id_meal,
+                                        meal.meal_date,
+                                        TypeOfMeal = (from mealType in db.Meal_types
+                                                      where mealType.id_meal_type == meal.id_meal_type
+                                                      select new { mealType.name }).First().name,
+                                        EmployeeName = (from employee in db.Employees
+                                                        where employee.id_employee == meal.id_employee
+                                                        select new { employee.name }).First().name,
+                                        meal.date_inserted
+                                    };
+                CustomertMealsBindingSource.DataSource = fillMealTable;
+                CustomerMealsGridView.DataSource = CustomertMealsBindingSource; 
+            }
         }
         private void AddMealButton_Click(object sender, EventArgs e)
         {
